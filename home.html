@@ -1,0 +1,95 @@
+/* home.html */
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SidoDolan - Rencanakan Perjalananmu</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="home.html" class="nav-logo">SidoDolan</a>
+            <nav class="nav-menu-desktop">
+                <a href="#home-page">Home</a>
+                <button class="nav-link-button" id="tukar-btn-desktop">Tukar</button>
+                <button class="nav-link-button" id="shop-btn-desktop">Shop</button>
+            </nav>
+            <button id="hamburger-button" class="hamburger-menu" aria-label="Buka menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <div id="mobile-nav" class="mobile-nav-overlay">
+        <a href="#home-page">Home</a>
+        <button class="nav-link-button" id="tukar-btn-mobile">Tukar</button>
+        <button class="nav-link-button" id="shop-btn-mobile">Shop</button>
+    </div>
+
+    <main id="home-page" class="container">
+        <section class="duration-section">
+            <h2>Pilih Durasi Perjalananmu</h2>
+            <p>Kami akan siapkan rekomendasi terbaik untuk petualanganmu di Sidoarjo.</p>
+            <div class="duration-options">
+                <button class="duration-card" data-duration="1">1 Hari</button>
+                <button class="duration-card" data-duration="2">2 Hari</button>
+                <button class="duration-card" data-duration="3">3 Hari</button>
+                <button class="duration-card" data-duration="4">4 Hari</button>
+            </div>
+        </section>
+
+        <section id="itinerary-result-section" class="itinerary-result-section hidden">
+            <div class="itinerary-header">
+                <h3>Rencana Perjalananmu</h3>
+                <div class="itinerary-controls">
+                    <button id="save-btn" class="control-button">Simpan Itinerary</button>
+                    <button id="reset-btn" class="control-button reset">Reset</button>
+                </div>
+            </div>
+            <div id="itinerary-container" class="itinerary-grid">
+            </div>
+        </section>
+    </main>
+
+    <div id="tukar-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-tukar-modal" class="close-button">&times;</button>
+            <h3>Tukar Paket Perjalanan</h3>
+            <p>Fitur ini memungkinkan Anda mengubah durasi atau memilih paket wisata tematik lainnya. Segera hadir!</p>
+            <button class="modal-ok-button">Mengerti</button>
+        </div>
+    </div>
+
+    <aside id="shop-panel" class="shop-panel">
+        <div class="shop-header">
+            <h3>SidoDolan Shop</h3>
+            <button id="close-shop-panel" class="close-button">&times;</button>
+        </div>
+        <div class="shop-body">
+            <div class="shop-item">
+                <img src="https://via.placeholder.com/100/1565C0/FFFFFF?text=Topi" alt="Topi SidoDolan">
+                <div>
+                    <h4>Topi Petualang</h4>
+                    <p>Rp 125.000</p>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://via.placeholder.com/100/42A5F5/FFFFFF?text=Tas" alt="Tote Bag SidoDolan">
+                <div>
+                    <h4>Tote Bag Jelajah</h4>
+                    <p>Rp 95.000</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <script src="js/home.js"></script>
+</body>
+</html>

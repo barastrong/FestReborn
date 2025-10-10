@@ -1,11 +1,28 @@
+/* index.html */
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello Function</title>
+    <title>SidoDolan Memuat...</title>
+    <link rel="stylesheet" href="css/splash.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello Function Website</h1>
+    <main id="splash-screen" class="splash-container">
+        <div class="splash-content">
+            <h1 class="splash-logo">SidoDolan</h1>
+            <p class="splash-tagline">Menyiapkan Petualanganmu...</p>
+        </div>
+        
+        <div class="loader-container">
+            <div id="progress-bar" class="progress-bar"></div>
+            <span id="loading-percentage" class="loading-percentage">0%</span>
+        </div>
+    </main>
+
+    <script src="js/splash.js"></script>
 </body>
 </html>
