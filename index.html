@@ -1,28 +1,125 @@
-/* index.html */
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SidoDolan Memuat...</title>
-    <link rel="stylesheet" href="css/splash.css">
+    <title>SidoDolan - Memuat Pengalaman Wisata</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <main id="splash-screen" class="splash-container">
-        <div class="splash-content">
-            <h1 class="splash-logo">SidoDolan</h1>
-            <p class="splash-tagline">Menyiapkan Petualanganmu...</p>
-        </div>
-        
-        <div class="loader-container">
-            <div id="progress-bar" class="progress-bar"></div>
-            <span id="loading-percentage" class="loading-percentage">0%</span>
-        </div>
-    </main>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap" rel="stylesheet">
 
-    <script src="js/splash.js"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-20px); }
+                100% { transform: translateY(0px); }
+            }
+            @keyframes fade-in-up {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            @keyframes scale-in {
+                from { opacity: 0; transform: scale(0.9); }
+                to { opacity: 1; transform: scale(1); }
+            }
+            @keyframes fade-in {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            .animate-float {
+                animation: float 6s ease-in-out infinite;
+            }
+            .animate-fade-in-up {
+                animation: fade-in-up 1s ease-out 0.2s backwards;
+            }
+            .animate-scale-in {
+                animation: scale-in 0.8s ease-out backwards;
+            }
+            .animate-fade-in {
+                animation: fade-in 1s ease-out backwards;
+            }
+            .shadow-strong {
+                box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+            }
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1565C0',
+                        'primary-dark': '#0D47A1',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        spin: 'spin 8s linear infinite',
+                        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="overflow-hidden">
+
+    <div id="splash-screen" class="fixed inset-0 z-50 flex items-center justify-center bg-cover bg-center bg-fixed transition-all duration-700 opacity-100 scale-100" style="background-image: linear-gradient(135deg, rgba(21, 101, 192, 0.95), rgba(13, 71, 161, 0.98)), url(https://source.unsplash.com/random/1920x1080?sidoarjo,landscape)">
+
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-20 left-10 animate-float"><i class="fa-solid fa-sparkles text-3xl text-white/30"></i></div>
+            <div class="absolute top-40 right-20 animate-float" style="animation-delay: 1s;"><i class="fa-solid fa-map-pin text-4xl text-white/20"></i></div>
+            <div class="absolute bottom-32 left-1/4 animate-float" style="animation-delay: 2s;"><i class="fa-solid fa-compass text-5xl text-white/25"></i></div>
+            <div class="absolute bottom-20 right-1/3 animate-float" style="animation-delay: 0.5s;"><i class="fa-solid fa-sparkles text-2xl text-white/30"></i></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div class="flex items-center justify-center mb-8 animate-fade-in">
+                <div class="h-px w-16 bg-gradient-to-r from-transparent to-white/50"></div>
+                <i class="fa-solid fa-compass text-3xl text-white mx-4 animate-spin"></i>
+                <div class="h-px w-16 bg-gradient-to-l from-transparent to-white/50"></div>
+            </div>
+
+            <div class="backdrop-blur-sm bg-white/5 rounded-3xl p-6 md:p-8 mb-6 shadow-strong border border-white/10 animate-scale-in">
+                <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent mb-2 tracking-tight">SidoDolan</h1>
+                <div class="h-1 w-24 md:w-32 mx-auto bg-gradient-to-r from-transparent via-white to-transparent rounded-full"></div>
+            </div>
+
+            <p class="text-xl md:text-2xl text-white/95 mb-12 max-w-3xl mx-auto font-light tracking-wide leading-relaxed animate-fade-in-up backdrop-blur-sm bg-white/5 py-4 px-6 rounded-2xl border border-white/10">
+                ✨ Eksplorasi Pesona Wisata Sidoarjo ✨
+            </p>
+
+            <div class="animate-fade-in-up" style="animation-delay: 0.3s;">
+                <button id="start-button" class="group relative bg-white text-primary hover:bg-white/95 transition-all duration-500 shadow-strong hover:shadow-[0_20px_60px_rgba(255,255,255,0.4)] text-lg md:text-xl px-10 md:px-12 py-5 md:py-6 rounded-full font-bold overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-3">
+                        <i class="fa-solid fa-compass w-6 h-6 group-hover:rotate-180 transition-transform duration-700"></i>
+                        Mulai Jelajah
+                        <i class="fa-solid fa-sparkles w-5 h-5 group-hover:scale-125 transition-transform duration-500"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-50 via-white to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </button>
+            </div>
+
+            <div class="mt-12 animate-fade-in" style="animation-delay: 0.5s;">
+                <div class="flex justify-center items-center gap-3 mb-3">
+                    <div class="w-3 h-3 bg-white rounded-full animate-pulse shadow-[0_0_20px_rgba(255,255,255,0.5)]"></div>
+                    <div class="w-3 h-3 bg-white/80 rounded-full animate-pulse shadow-[0_0_15px_rgba(255,255,255,0.4)]" style="animation-delay: 0.2s;"></div>
+                    <div class="w-3 h-3 bg-white/60 rounded-full animate-pulse shadow-[0_0_10px_rgba(255,255,255,0.3)]" style="animation-delay: 0.4s;"></div>
+                </div>
+                <p class="text-white/70 text-sm font-light tracking-widest">MEMUAT PENGALAMAN WISATA</p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/20 to-transparent"></div>
+    </div>
+    
+    <script src="../js/splash.js"></script>
 </body>
 </html>

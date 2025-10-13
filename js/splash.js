@@ -1,29 +1,24 @@
-/* splash.js */
 document.addEventListener('DOMContentLoaded', () => {
-    const progressBar = document.getElementById('progress-bar');
-    const loadingPercentage = document.getElementById('loading-percentage');
     const splashScreen = document.getElementById('splash-screen');
+    const startButton = document.getElementById('start-button');
+    let timer;
 
-    let progress = 0;
-    const intervalTime = 30;
-
-    const startTransition = () => {
+    const handleFinish = () => {
+        // Hapus timeout otomatis jika tombol sudah diklik
+        clearTimeout(timer);
+        
+        // Terapkan class untuk transisi fade-out
+        splashScreen.classList.add('opacity-0', 'scale-95');
+        
+        // Tunggu transisi selesai sebelum pindah halaman
         setTimeout(() => {
-            splashScreen.classList.add('fade-out');
-            setTimeout(() => {
-                window.location.href = 'home.html';
-            }, 600);
-        }, 300);
+            window.location.href = 'home.html';
+        }, 800);
     };
-    
-    const loadingInterval = setInterval(() => {
-        progress++;
-        progressBar.style.width = progress + '%';
-        loadingPercentage.textContent = progress + '%';
 
-        if (progress >= 100) {
-            clearInterval(loadingInterval);
-            startTransition();
-        }
-    }, intervalTime);
+    // Atur timeout otomatis
+    timer = setTimeout(handleFinish, 4000);
+
+    // Tambahkan event listener ke tombol
+    startButton.addEventListener('click', handleFinish);
 });
