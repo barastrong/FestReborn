@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi - SidoDolan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F5AD18',
+                        'primary-dark': '#134686',
+                        accent: '#F5AD18',
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], },
+                }
+            }
+        }
+    </script>
+    <style>
+        .thumbnail-active {
+            border-color: #F5AD18; /* primary color */
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50">
+
+    <nav class="sticky top-0 z-50 shadow-sm py-5 bg-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="home.html" class="flex items-center gap-2 text-primary hover:scale-105 transition-transform">
+                <i class="fa-solid fa-compass text-3xl"></i>
+                <span class="text-2xl sm:text-3xl font-bold">SidoDolan</span>
+            </a>
+            <div class="hidden md:flex items-center gap-1 font-semibold text-lg">
+                <a href="home.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Home</a>
+                <a href="destination.html" class="text-primary font-bold px-5 py-2">Destinasi</a>
+                <a href="kuliner.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Kuliner</a>
+                <a href="hotel.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Hotel</a>
+                <a href="lokasi.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
+            </div>
+            <a href="home.html" class="md:hidden text-primary p-2 text-3xl"><i class="fa-solid fa-house"></i></a>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container mx-auto px-4 py-12 md:py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <div id="gallery-container">
+                <div class="mb-4 rounded-xl overflow-hidden shadow-xl aspect-video">
+                    <img id="main-image" src="" alt="Gambar utama destinasi" class="w-full h-full object-cover">
+                </div>
+                <div id="thumbnail-grid" class="grid grid-cols-5 gap-3">
+                </div>
+            </div>
+            
+            <div id="info-container">
+                <h1 id="destination-name" class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4"></h1>
+                
+                <!-- KARTU HARGA TIKET BARU -->
+                <div id="ticket-price-block" class="flex items-center gap-4 bg-primary/10 p-4 rounded-xl mb-8 border border-primary/20">
+                    <i class="fa-solid fa-ticket text-4xl text-primary flex-shrink-0"></i>
+                    <div>
+                        <h3 class="font-semibold text-slate-600">Harga Tiket Masuk</h3>
+                        <p id="destination-ticket-price" class="text-3xl font-extrabold text-primary-dark"></p>
+                    </div>
+                </div>
+
+                <div id="destination-description-wrapper" class="mb-8">
+                    <p id="destination-description" class="text-slate-600 leading-relaxed"></p>
+                </div>
+
+                <div class="p-6 bg-white rounded-2xl shadow-lg border">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Detail Informasi</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-map-marker-alt text-2xl text-primary mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-700">Alamat</h4>
+                                <p id="destination-address" class="text-slate-500"></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-clock text-2xl text-primary mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-700">Jam Buka</h4>
+                                <div id="destination-hours" class="space-y-1 text-slate-500"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fa-solid fa-share-nodes text-2xl text-primary mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-700">Media Sosial</h4>
+                                <div id="destination-socials" class="flex gap-4 mt-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-map-marked-alt text-primary"></i>
+                        Lokasi Peta
+                    </h3>
+                    <div class="rounded-xl overflow-hidden shadow-lg border">
+                        <iframe id="destination-gmap-embed"
+                            class="w-full h-[350px]"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-primary-dark text-slate-300 mt-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 py-16 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                <div class="space-y-4 flex flex-col items-center md:items-start">
+                    <div class="flex items-center gap-2 mb-2 text-white text-3xl font-bold">
+                        <i class="fa-solid fa-compass"></i> SidoDolan
+                    </div>
+                    <p class="text-white/80 leading-relaxed text-sm">
+                        Temukan pengalaman wisata terbaik di Sidoarjo dengan rekomendasi destinasi, kuliner, dan aktivitas seru.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Menu Cepat</h3>
+                    <div class="space-y-3 text-sm">
+                         <a href="home.html" class="block text-white/80 hover:text-white">Home</a>
+                        <a href="destination.html" class="block text-accent font-bold">Destinasi</a>
+                        <a href="kuliner.html" class="block text-white/80 hover:text-white">Kuliner</a>
+                        <a href="hotel.html" class="block text-white/80 hover:text-white">Hotel</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Layanan</h3>
+                    <div class="space-y-3 text-sm">
+                         <a href="#" class="block text-white/80 hover:text-white">Paket Wisata</a>
+                         <a href="#" class="block text-white/80 hover:text-white">Promo</a>
+                         <a href="#" class="block text-white/80 hover:text-white">Event</a>
+                         <a href="#" class="block text-white/80 hover:text-white">FAQ</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Hubungi Kami</h3>
+                    <div class="space-y-4 text-sm">
+                        <p class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fa-solid fa-map-marker-alt text-accent"></i>
+                            <span>Jl. Raya Sidoarjo No. 45</span>
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fa-solid fa-phone text-accent"></i>
+                            <span>(62) 9243-9888-3900</span>
+                        </p>
+                        <p class="flex items-center justify-center md:justify-start gap-3">
+                            <i class="fa-solid fa-envelope text-accent"></i>
+                            <span>info@sidodolan.id</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 mt-8 border-t border-white/20 text-center text-white/70 text-sm">
+                <p>© 2025 SidoDolan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/detailDestination.js"></script>
+</body>
+</html>

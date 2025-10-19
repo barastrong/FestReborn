@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinasi - SidoDolan</title>
+    <title>Kuliner - SidoDolan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
             }
         }
     </script>
-    <style>
+   <style>
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -44,10 +44,6 @@
             transform: scale(1.08);
         }
         
-        .card-hover:hover .explore-arrow {
-            transform: translateX(8px);
-        }
-        
         .input-focus:focus {
             transform: translateY(-2px);
             box-shadow: 0 8px 16px rgba(245, 173, 24, 0.15);
@@ -57,16 +53,16 @@
             background: linear-gradient(135deg, #FAF7F3 0%, #FFF9F0 100%);
         }
         
-        .decorative-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            pointer-events: none;
-        }
-        
         .search-shadow {
             box-shadow: 0 4px 20px rgba(19, 70, 134, 0.08);
+        }
+        
+        .rating-star {
+            transition: all 0.2s ease;
+        }
+        
+        .card-hover:hover .rating-star {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -80,8 +76,8 @@
             </a>
             <div class="hidden md:flex items-center gap-1 font-semibold text-lg">
                 <a href="home.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Home</a>
-                <a href="destination.html" class="text-primary px-5 py-2">Destinasi</a>
-                <a href="kuliner.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Kuliner</a>
+                <a href="destination.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Destinasi</a>
+                <a href="kuliner.html" class="text-primary px-5 py-2">Kuliner</a>
                 <a href="hotel.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Hotel</a>
                 <a href="lokasi.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
             </div>
@@ -89,16 +85,16 @@
         </div>
     </nav>
     
-    <header class="py-20 relative overflow-hidden min-h-[30vh]" style="background-image: url('./assets/candi-pari.jpg'); background-size: cover; background-position: center;">
-        <div class="absolute inset-0 bg-black/45"></div>
+    <header class="py-20 relative overflow-hidden min-h-[30vh]" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/50"></div>
         
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto text-center mb-12 animate-fade-in mt-20">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-                    Destinasi <span class="text-primary">Pilihan</span>
+                    Kuliner <span class="text-primary">Pilihan</span>
                 </h1>
                 <p class="text-lg md:text-xl text-white max-w-2xl mx-auto">
-                    Jelajahi pesona Sidoarjo, dari alam, kuliner, hingga budaya yang memikat!
+                    Jelajahi cita rasa khas Sidoarjo yang menggugah selera
                 </p>
             </div>
             
@@ -114,10 +110,10 @@
                     </div>
                     <div class="w-full flex-grow">
                         <label class="block text-sm font-semibold text-slate-700 mb-2">
-                            <i class="fa-solid fa-magnifying-glass mr-2"></i>Telusuri Destinasi
+                            <i class="fa-solid fa-magnifying-glass mr-2"></i>Telusuri Kuliner
                         </label>
                         <div class="flex gap-3">
-                            <input id="search-input" type="text" placeholder="Ketik nama destinasi..." class="input-focus w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent transition focus:outline-none font-medium">
+                            <input id="search-input" type="text" placeholder="Ketik nama kuliner..." class="input-focus w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:ring-2 focus:ring-accent focus:border-accent transition focus:outline-none font-medium">
                             <button id="search-button" class="bg-primary-dark text-white font-semibold px-8 py-3 rounded-xl hover:bg-primary-dark/90 active:scale-95 transition-all shadow-lg hover:shadow-xl">
                               Telusuri
                             </button>
@@ -128,8 +124,8 @@
         </div>
     </header>
     
-    <div class="container mx-auto px-4 pb-16 mt-12">
-        <main id="destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 min-h-[300px]"></main>
+    <div class="container mx-auto px-4 pb-16 mt-20">
+        <main id="destinations-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12 min-h-[300px]"></main>
         <footer id="pagination" class="flex justify-center items-center gap-3"></footer>
     </div>
 
@@ -168,10 +164,10 @@
                         <a href="home.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Home
                         </a>
-                        <a href="destination.html" class="block w-full md:w-auto text-accent font-bold hover:translate-x-2 transition-all">
+                        <a href="destination.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Destinasi
                         </a>
-                        <a href="kuliner.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                        <a href="kuliner.html" class="block w-full md:w-auto text-accent font-bold hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kuliner
                         </a>
                         <a href="hotels.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
@@ -224,7 +220,6 @@
         </div>
     </footer>
 
-
-    <script src="js/destinations.js"></script>
+    <script src="js/kuliner.js"></script>
 </body>
 </html>

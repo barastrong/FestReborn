@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Lokasi - SidoDolan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F5AD18', 'primary-dark': '#134686', accent: '#F5AD18',
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], },
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.6s ease-out forwards; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+        .card-hover:hover img { transform: scale(1.08); }
+        .input-focus:focus { box-shadow: 0 0 0 3px rgba(245, 173, 24, 0.3); }
+        body { background-color: #F8FAFC; }
+        .search-shadow { box-shadow: 0 10px 25px rgba(19, 70, 134, 0.08); }
+        .pagination-button, .pagination-arrow {
+            height: 2.75rem; width: 2.75rem; border-radius: 0.75rem; font-weight: 700;
+            transition: all 0.3s; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .pagination-button { background-color: white; color: #334155; }
+        .pagination-button:hover { background-color: #f1f5f9; }
+        .pagination-button.active { background-color: #F5AD18; color: white; transform: scale(1.1); }
+        .pagination-arrow { background-color: white; color: #334155; }
+        .pagination-arrow:hover { background-color: #f1f5f9; }
+        .pagination-arrow:disabled { opacity: 0.5; cursor: not-allowed; }
+        
+        /* --- STYLE BARU UNTUK DUAL RANGE SLIDER KUSTOM --- */
+        .price-slider-container { position: relative; width: 100%; height: 20px; }
+        .price-slider-track, .price-slider-range {
+            position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+            border-radius: 9999px; height: 5px;
+        }
+        .price-slider-track { background-color: #E2E8F0; width: 100%; }
+        .price-slider-range { background-color: #134686; z-index: 1; }
+        
+        /* Menghilangkan tampilan default input range */
+        .price-slider-input {
+            -webkit-appearance: none; -moz-appearance: none; appearance: none;
+            width: 100%; background: transparent; pointer-events: none;
+            position: absolute; top: 0; left: 0; height: 20px;
+        }
+        .price-slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            height: 20px; width: 20px; border-radius: 50%;
+            background: #FFF; border: 4px solid #134686;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            cursor: pointer; pointer-events: auto;
+            position: relative; z-index: 2;
+        }
+        .price-slider-input::-moz-range-thumb {
+            height: 20px; width: 20px; border-radius: 50%;
+            background: #FFF; border: 4px solid #134686;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+            cursor: pointer; pointer-events: auto;
+            position: relative; z-index: 2;
+        }
+    </style>
+</head>
+<body class="font-sans">
+
+    <nav class="sticky top-0 z-50 shadow-sm py-5 bg-white shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+            <a href="home.html" class="flex items-center gap-2 text-primary hover:scale-105 transition-transform"><i class="fa-solid fa-compass text-3xl"></i><span class="text-2xl sm:text-3xl font-bold">SidoDolan</span></a>
+            <div class="hidden md:flex items-center gap-1 font-semibold text-lg">
+                <a href="home.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Home</a>
+                <a href="destination.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Destinasi</a>
+                <a href="kuliner.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Kuliner</a>
+                <a href="hotel.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Hotel</a>
+                <a href="lokasi.html" class="text-primary px-5 py-2">Lokasi Kamu</a>
+            </div>
+            <a href="home.html" class="md:hidden text-primary p-2 text-3xl"><i class="fa-solid fa-house"></i></a>
+        </div>
+    </nav>
+    
+    <header class="py-20 relative overflow-hidden min-h-[30vh]" style="background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center mb-12 animate-fade-in mt-20">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">Temukan <span class="text-primary">Lokasimu</span></h1>
+                <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">Cari destinasi, hotel, atau kuliner favoritmu di satu tempat.</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 -mt-24 relative z-20">
+        <div class="bg-white rounded-2xl p-6 md:p-8 search-shadow animate-fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+                <div class="lg:col-span-2">
+                    <label class="block text-sm font-semibold text-slate-700 mb-2"><i class="fa-solid fa-magnifying-glass mr-2"></i>Cari Tempat atau Lokasi</label>
+                    <input id="search-input" type="text" placeholder="Contoh: Candi Pari, Surabaya..." class="input-focus w-full p-3 bg-slate-100 border-2 border-slate-200 rounded-xl focus:border-primary transition focus:outline-none font-medium">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2"><i class="fa-solid fa-filter mr-2"></i>Kategori</label>
+                    <select id="category-filter" class="w-full p-3 bg-slate-100 border-2 border-slate-200 rounded-xl focus:border-primary transition appearance-none focus:outline-none font-medium" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27M6 8l4 4 4-4%27/%3e%3c/svg%3e'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem;">
+                        <option value="All">Semua</option>
+                        <option value="Destinasi">Destinasi</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Kuliner">Kuliner</option>
+                    </select>
+                </div>
+                 <div>
+                    <label class="block text-sm font-semibold text-slate-700 mb-2"><i class="fa-solid fa-star mr-2 text-accent"></i>Rating</label>
+                     <select id="rating-sort" class="w-full p-3 bg-slate-100 border-2 border-slate-200 rounded-xl focus:border-primary transition appearance-none focus:outline-none font-medium" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%236b7280%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27M6 8l4 4 4-4%27/%3e%3c/svg%3e'); background-position: right 0.75rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem;">
+                        <option value="default">Default</option>
+                        <option value="high">Tertinggi</option>
+                        <option value="low">Terendah</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-slate-200">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
+                     <label class="text-sm font-semibold text-slate-700 mb-2 sm:mb-0"><i class="fa-solid fa-money-bill-wave mr-2"></i>Rentang Harga</label>
+                     <div class="flex items-center gap-2 text-xs font-bold text-slate-600">
+                         <span id="min-price-display" class="bg-slate-100 px-2 py-1 rounded-md">Rp 0</span>
+                         <span>-</span>
+                         <span id="max-price-display" class="bg-slate-100 px-2 py-1 rounded-md">Rp 2.5jt</span>
+                     </div>
+                </div>
+                <!-- STRUKTUR SLIDER BARU -->
+                <div class="price-slider-container">
+                    <div class="price-slider-track"></div>
+                    <div id="price-slider-range" class="price-slider-range"></div>
+                    <input type="range" id="min-price-slider" class="price-slider-input">
+                    <input type="range" id="max-price-slider" class="price-slider-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4 pb-16 pt-12">
+        <main id="grid-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 min-h-[300px]"></main>
+        <footer id="pagination" class="flex justify-center items-center gap-3"></footer>
+    </div>
+
+    <footer class="bg-primary-dark text-slate-300 mt-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 py-16 relative z-10">
+             <p class="pt-8 mt-8 border-t border-white/20 text-center text-white/70 text-sm">© 2025 SidoDolan. All rights reserved. Made with <i class="fa-solid fa-heart text-accent"></i> in Sidoarjo</p>
+        </div>
+    </footer>
+
+    <script src="js/lokasi.js"></script>
+</body>
+</html>
