@@ -1,15 +1,15 @@
         document.addEventListener('DOMContentLoaded', () => {
             const topDestinations = [
-                { name: 'Lumpur Lapindo', image: 'https://placehold.co/400x500/005A9C/FFFFFF/png?text=Lumpur\\nLapindo' },
-                { name: 'Candi Pari', image: 'https://placehold.co/400x500/D2691E/FFFFFF/png?text=Candi+Pari' },
-                { name: 'Pulau Sarine', image: 'https://placehold.co/400x500/228B22/FFFFFF/png?text=Pulau+Sarine' },
-                { name: 'Kerajinan Kulit', image: 'https://placehold.co/400x500/8B4513/FFFFFF/png?text=Kerajinan\\nKulit' },
-                { name: 'Wisata Bahari Tlocor', image: 'https://placehold.co/400x500/4682B4/FFFFFF/png?text=Wisata\\nBahari' },
-                { name: 'Museum Mpu Tantular', image: 'https://placehold.co/400x500/6A5ACD/FFFFFF/png?text=Museum\\nMpu+Tantular' },
-                { name: 'Kampung Lontong Kupang', image: 'https://placehold.co/400x500/FF4500/FFFFFF/png?text=Lontong\\nKupang' },
-                { name: 'Kebun Kurma', image: 'https://placehold.co/400x500/2E8B57/FFFFFF/png?text=Kebun\\nKurma' },
-                { name: 'Pasar Ikan', image: 'https://placehold.co/400x500/DAA520/FFFFFF/png?text=Pasar+Ikan' },
-                { name: 'Alun-alun Sidoarjo', image: 'https://placehold.co/400x500/DC143C/FFFFFF/png?text=Alun-alun' },
+                { name: 'Lumpur Lapindo', image: 'https://placehold.co/400x533/005A9C/FFFFFF/png?text=Lumpur+Lapindo' },
+                { name: 'Candi Pari', image: 'https://placehold.co/400x533/D2691E/FFFFFF/png?text=Candi+Pari' },
+                { name: 'Pulau Sarine', image: 'https://placehold.co/400x533/228B22/FFFFFF/png?text=Pulau+Sarine' },
+                { name: 'Kerajinan Kulit', image: 'https://placehold.co/400x533/8B4513/FFFFFF/png?text=Kerajinan+Kulit' },
+                { name: 'Wisata Bahari Tlocor', image: 'https://placehold.co/400x533/4682B4/FFFFFF/png?text=Wisata+Bahari' },
+                { name: 'Museum Mpu Tantular', image: 'https://placehold.co/400x533/6A5ACD/FFFFFF/png?text=Museum+Mpu+Tantular' },
+                { name: 'Kampung Lontong Kupang', image: 'https://placehold.co/400x533/FF4500/FFFFFF/png?text=Lontong+Kupang' },
+                { name: 'Kebun Kurma', image: 'https://placehold.co/400x533/2E8B57/FFFFFF/png?text=Kebun+Kurma' },
+                { name: 'Pasar Ikan', image: 'https://placehold.co/400x533/DAA520/FFFFFF/png?text=Pasar+Ikan' },
+                { name: 'Alun-alun Sidoarjo', image: 'https://placehold.co/400x533/DC143C/FFFFFF/png?text=Alun-alun' },
             ];
             
             const tourPackages = [
@@ -34,15 +34,23 @@
             
             const destinationGrid = document.getElementById('top-destinasi-grid');
             if (destinationGrid) {
-                destinationGrid.innerHTML = topDestinations.map(dest => `
-                    <a href="#" class="relative rounded-lg overflow-hidden group aspect-[4/5]">
-                        <img src="${dest.image}" alt="${dest.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300"></div>
-                        <div class="absolute bottom-0 left-0 p-4 transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <h3 class="text-white text-lg font-bold">${dest.name}</h3>
-                        </div>
-                    </a>
-                `).join('');
+                destinationGrid.innerHTML = topDestinations.map(dest => {
+                    const destinationId = dest.name.toLowerCase().replace(/\s+/g, '-');
+                    return `
+                        <a href="detailDestination.html?id=${destinationId}" class="flex-shrink-0 w-64 md:w-72 group">
+                            <div class="relative rounded-xl overflow-hidden aspect-[3/4] shadow-lg transition-all duration-300 group-hover:shadow-2xl">
+                                <img src="${dest.image}" alt="${dest.name}" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                                <div class="absolute bottom-0 left-0 p-4 md:p-5 text-white w-full">
+                                    <h3 class="font-bold text-lg mb-1">${dest.name}</h3>
+                                    <p class="text-sm opacity-80 group-hover:opacity-100 transition flex items-center gap-2">
+                                        Visit <i class="fa-solid fa-arrow-right text-xs"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }).join('');
             }
             
             const packageGrid = document.getElementById('paket-wisata-grid');

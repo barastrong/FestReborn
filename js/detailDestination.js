@@ -27,7 +27,7 @@
                 'kampung-batik-jetis': {
                     name: "Kampung Batik Jetis",
                     category: "Budaya",
-                    phone: null,
+                    phone: 'tel: 085731003326',
                     images: [
                         "https://cdn.ngopibareng.id/uploads/2023/2023-09-03/kampung-batik-jetis-destinasi-umkm-lokal-di-gelaran-porprov--01",
                         "https://surabayastory.com/wp-content/uploads/2019/08/kampung-batik-jetis.jpg",
