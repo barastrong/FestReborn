@@ -97,12 +97,8 @@
                     </div>
                 `).join('');
             }
-
-            const navbar = document.getElementById('navbar');
-            const hamburgerButton = document.getElementById('hamburger-button');
-            const mobileNav = document.getElementById('mobile-nav');
-            const mobileNavPanel = document.getElementById('mobile-nav-panel');
-            const closeMobileNav = document.getElementById('close-mobile-nav');
+            
+            // KODE JAVASCRIPT UNTUK HAMBURGER MENU DIHAPUS
             const modal = document.getElementById('package-modal');
             const modalPanel = document.getElementById('modal-panel');
             const modalTitle = document.getElementById('modal-title');
@@ -112,26 +108,6 @@
             const modalFeatures = document.getElementById('modal-features');
             const modalImage = document.getElementById('modal-image');
             const closeModalBtn = document.getElementById('modal-close-btn');
-
-            window.addEventListener('scroll', () => {
-                navbar.classList.toggle('scrolled', window.scrollY > 50);
-            });
-            
-            const openMobileMenu = () => {
-                mobileNav.classList.remove('opacity-0', 'pointer-events-none');
-                mobileNavPanel.classList.remove('translate-x-full');
-            };
-
-            const closeMobileMenu = () => {
-                mobileNav.classList.add('opacity-0', 'pointer-events-none');
-                mobileNavPanel.classList.add('translate-x-full');
-            };
-
-            hamburgerButton.addEventListener('click', openMobileMenu);
-            closeMobileNav.addEventListener('click', closeMobileMenu);
-            mobileNav.addEventListener('click', (e) => {
-                if (e.target === mobileNav) closeMobileMenu();
-            });
             
             const openModal = (packageId) => {
                 const data = packageDetails[packageId];
@@ -169,7 +145,7 @@
 
             closeModalBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
+                if (e-target === modal) closeModal();
             });
             
             const observer = new IntersectionObserver((entries) => {
