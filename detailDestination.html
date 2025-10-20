@@ -25,7 +25,7 @@
     </script>
     <style>
         .thumbnail-active {
-            border-color: #F5AD18; /* primary color */
+            border-color: #F5AD18;
             opacity: 1;
         }
     </style>
@@ -49,73 +49,77 @@
         </div>
     </nav>
 
-    <main id="main-content" class="container mx-auto px-4 py-12 md:py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <main id="main-content" class="container mx-auto px-4 py-12 md:py-16">
+        <div class="mb-8">
+            <a href="destination.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-primary-dark font-semibold transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                Kembali ke Daftar Destinasi
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             
-            <div id="gallery-container">
-                <div class="mb-4 rounded-xl overflow-hidden shadow-xl aspect-video">
-                    <img id="main-image" src="" alt="Gambar utama destinasi" class="w-full h-full object-cover">
+            <!-- KOLOM KIRI: GALERI & DESKRIPSI -->
+            <div class="lg:col-span-2">
+                <div id="gallery-container" class="mb-8">
+                    <div class="mb-4 rounded-xl overflow-hidden shadow-xl aspect-video">
+                        <img id="main-image" src="" alt="Gambar utama destinasi" class="w-full h-full object-cover">
+                    </div>
+                    <div id="thumbnail-grid" class="grid grid-cols-5 gap-3">
+                    </div>
                 </div>
-                <div id="thumbnail-grid" class="grid grid-cols-5 gap-3">
+
+                <div id="description-section">
+                    <h1 id="destination-name" class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-8"></h1>
+                    <div id="description-content-container" class="space-y-6">
+                    </div>
+                </div>
+                
+                <div id="share-section" class="mt-10 pt-6 border-t">
+                    <h3 class="font-bold text-slate-700 mb-3">Bagikan Destinasi Ini</h3>
+                    <div class="flex gap-3">
+                        <a id="share-whatsapp" href="#" target="_blank" class="flex items-center justify-center h-12 w-12 rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a id="share-facebook" href="#" target="_blank" class="flex items-center justify-center h-12 w-12 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors text-xl"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a id="share-twitter" href="#" target="_blank" class="flex items-center justify-center h-12 w-12 rounded-full bg-black text-white hover:bg-gray-800 transition-colors text-xl"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
                 </div>
             </div>
             
-            <div id="info-container">
-                <h1 id="destination-name" class="text-4xl md:text-5xl font-extrabold text-slate-800 mb-4"></h1>
-                
-                <!-- KARTU HARGA TIKET BARU -->
-                <div id="ticket-price-block" class="flex items-center gap-4 bg-primary/10 p-4 rounded-xl mb-8 border border-primary/20">
-                    <i class="fa-solid fa-ticket text-4xl text-primary flex-shrink-0"></i>
-                    <div>
-                        <h3 class="font-semibold text-slate-600">Harga Tiket Masuk</h3>
-                        <p id="destination-ticket-price" class="text-3xl font-extrabold text-primary-dark"></p>
-                    </div>
-                </div>
-
-                <div id="destination-description-wrapper" class="mb-8">
-                    <p id="destination-description" class="text-slate-600 leading-relaxed"></p>
-                </div>
-
-                <div class="p-6 bg-white rounded-2xl shadow-lg border">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">Detail Informasi</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-map-marker-alt text-2xl text-primary mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-slate-700">Alamat</h4>
-                                <p id="destination-address" class="text-slate-500"></p>
+            <!-- KOLOM KANAN: SIDEBAR INFORMASI -->
+            <div class="lg:col-span-1">
+                <div class="sticky top-28 space-y-6">
+                    <div class="p-6 bg-white rounded-2xl shadow-lg border">
+                        <span id="destination-category" class="inline-block bg-primary/10 text-primary-dark font-semibold px-3 py-1 rounded-full text-sm mb-4"></span>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between items-start">
+                                <span class="text-slate-500">Alamat</span>
+                                <p id="destination-address" class="text-slate-800 font-semibold text-right w-1/2"></p>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <span class="text-slate-500">Jam Buka</span>
+                                <div id="destination-hours" class="text-slate-800 font-semibold text-right w-1/2"></div>
                             </div>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-clock text-2xl text-primary mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-slate-700">Jam Buka</h4>
-                                <div id="destination-hours" class="space-y-1 text-slate-500"></div>
-                            </div>
+
+                        <div class="mt-6 bg-slate-50 rounded-lg p-4">
+                            <p class="text-sm text-slate-500 mb-1">Tiket</p>
+                            <p id="destination-ticket-price" class="text-2xl font-bold text-primary-dark"></p>
                         </div>
-                        <div class="flex items-start gap-4">
-                            <i class="fa-solid fa-share-nodes text-2xl text-primary mt-1"></i>
-                            <div>
-                                <h4 class="font-bold text-slate-700">Media Sosial</h4>
-                                <div id="destination-socials" class="flex gap-4 mt-2"></div>
-                            </div>
+
+                        <div class="mt-6 space-y-3">
+                            <a id="info-desk-button" href="#" class="block text-center w-full border-2 border-primary-dark text-primary-dark font-semibold py-3 rounded-lg hover:bg-primary-dark/5 transition-colors">Information Desk</a>
+                            <a id="phone-button" href="#" class="hidden items-center justify-center gap-2 text-center w-full bg-primary-dark text-white font-semibold py-3 rounded-lg hover:bg-primary-dark/90 transition-colors">
+                                <i class="fa-solid fa-phone"></i>
+                                Hubungi Via Telepon
+                            </a>
                         </div>
                     </div>
-                </div>
-                
-                <div class="mt-8">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
-                        <i class="fa-solid fa-map-marked-alt text-primary"></i>
-                        Lokasi Peta
-                    </h3>
-                    <div class="rounded-xl overflow-hidden shadow-lg border">
-                        <iframe id="destination-gmap-embed"
-                            class="w-full h-[350px]"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+
+                    <div id="map-section">
+                        <div class="rounded-xl overflow-hidden shadow-lg border">
+                            <iframe id="destination-gmap-embed" class="w-full h-[300px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,8 +127,14 @@
     </main>
 
     <footer class="bg-primary-dark text-slate-300 mt-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        </div>
+        
         <div class="container mx-auto px-6 py-16 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+                
                 <div class="space-y-4 flex flex-col items-center md:items-start">
                     <div class="flex items-center gap-2 mb-2 text-white text-3xl font-bold">
                         <i class="fa-solid fa-compass"></i> SidoDolan
@@ -132,25 +142,55 @@
                     <p class="text-white/80 leading-relaxed text-sm">
                         Temukan pengalaman wisata terbaik di Sidoarjo dengan rekomendasi destinasi, kuliner, dan aktivitas seru.
                     </p>
+                    <div class="flex gap-3 pt-2">
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-accent hover:scale-110 text-white transition-all">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-accent hover:scale-110 text-white transition-all">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-xl bg-white/10 hover:bg-accent hover:scale-110 text-white transition-all">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <div>
                     <h3 class="text-lg font-bold text-white mb-5">Menu Cepat</h3>
                     <div class="space-y-3 text-sm">
-                         <a href="home.html" class="block text-white/80 hover:text-white">Home</a>
-                        <a href="destination.html" class="block text-accent font-bold">Destinasi</a>
-                        <a href="kuliner.html" class="block text-white/80 hover:text-white">Kuliner</a>
-                        <a href="hotel.html" class="block text-white/80 hover:text-white">Hotel</a>
+                        <a href="home.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Home
+                        </a>
+                        <a href="destination.html" class="block w-full md:w-auto text-accent font-bold hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Destinasi
+                        </a>
+                        <a href="kuliner.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kuliner
+                        </a>
+                        <a href="hotels.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Hotel
+                        </a>
                     </div>
                 </div>
+
                 <div>
                     <h3 class="text-lg font-bold text-white mb-5">Layanan</h3>
                     <div class="space-y-3 text-sm">
-                         <a href="#" class="block text-white/80 hover:text-white">Paket Wisata</a>
-                         <a href="#" class="block text-white/80 hover:text-white">Promo</a>
-                         <a href="#" class="block text-white/80 hover:text-white">Event</a>
-                         <a href="#" class="block text-white/80 hover:text-white">FAQ</a>
+                        <a href="paket-wisata.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Paket Wisata
+                        </a>
+                        <a href="promo.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Promo
+                        </a>
+                        <a href="event.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Event
+                        </a>
+                        <a href="faq.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs mr-2"></i>FAQ
+                        </a>
                     </div>
                 </div>
+
                 <div>
                     <h3 class="text-lg font-bold text-white mb-5">Hubungi Kami</h3>
                     <div class="space-y-4 text-sm">
@@ -168,9 +208,11 @@
                         </p>
                     </div>
                 </div>
+
             </div>
+
             <div class="pt-8 mt-8 border-t border-white/20 text-center text-white/70 text-sm">
-                <p>© 2025 SidoDolan. All rights reserved.</p>
+                <p>© 2025 SidoDolan. All rights reserved. Made with <i class="fa-solid fa-heart text-accent"></i> in Sidoarjo</p>
             </div>
         </div>
     </footer>
