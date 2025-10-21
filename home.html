@@ -14,9 +14,6 @@
 
     <style type="text/tailwindcss">
         @layer utilities {
-            /* CSS UNTUK NAVBAR LAMA SUDAH DIHAPUS, KARENA GAYA SUDAH DI HTML */
-            
-            /* Utility untuk menyembunyikan scrollbar tetap ada */
             .scrollbar-hide::-webkit-scrollbar {
                 display: none;
             }
@@ -72,14 +69,25 @@
     <nav class="sticky top-0 z-50 shadow-sm py-5 bg-white shadow-md">
         <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between">
             <a href="home.html" class="hover:scale-105 transition-transform">
-                <!-- Pastikan path logo Anda benar -->
                 <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-14 w-auto">
             </a>
             <div class="hidden md:flex items-center gap-1 font-semibold text-lg">
                 <a href="home.html" class="text-primary px-5 py-2">Home</a>
                 <a href="destination.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Destinasi</a>
                 <a href="kuliner.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Kuliner</a>
-                <a href="hotel.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Hotel</a>
+                
+                <!-- Dropdown Akomodasi -->
+                <div class="relative group">
+                    <button class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors flex items-center gap-2 focus:outline-none">
+                        Akomodasi
+                        <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white rounded-lg shadow-xl p-2 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-10 border border-slate-100">
+                        <a href="hotel.html" class="block w-full text-left px-4 py-2 text-slate-600 hover:bg-slate-100 hover:text-primary rounded-md transition-colors">Hotel</a>
+                        <a href="transportasi.html" class="block w-full text-left px-4 py-2 text-slate-600 hover:bg-slate-100 hover:text-primary rounded-md transition-colors">Transportasi</a>
+                    </div>
+                </div>
+
                 <a href="lokasi.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
             </div>
             <a href="home.html" class="md:hidden text-primary p-2 text-3xl"><i class="fa-solid fa-house"></i></a>
@@ -124,7 +132,7 @@
             </section>
         </div>
 
-        <section id="top-destinasi" class="py-20 sm:py-24 overflow-x-hidden">
+        <section id="top-destinasi" class="py-20 sm:py-24">
             <div class="container text-center mb-16 fade-in-up">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-800">Destinasi Paling Populer</h2>
                 <p class="text-base sm:text-lg text-slate-500 max-w-2xl mx-auto">Temukan tempat-tempat favorit yang paling sering dikunjungi wisatawan di Sidoarjo.</p>
@@ -151,77 +159,70 @@
     </main>
 
 <footer class="bg-primary-dark text-slate-300">
-    <div class="container pt-12 mb-6">
-
-        <!-- Bagian Tengah: Konten Utama -->
+    <div class="container pt-20 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <!-- Kolom 1: Identitas Brand -->
             <div class="space-y-4">
-                <a href="home.html" class="inline-block bg-white p-3 rounded-lg">
-                    <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-18 w-auto">
+                <a href="home.html" class="inline-block bg-white p-2 rounded-lg shadow-md hover:scale-105 transition-transform">
+                    <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-16 w-auto">
                 </a>
-                <p class="text-sm leading-relaxed">
+                <p class="text-sm leading-relaxed text-slate-300/90">
                     Platform digital Anda untuk menjelajahi pesona tersembunyi Sidoarjo. Temukan pengalaman tak terlupakan bersama kami.
                 </p>
                 <div class="flex items-center gap-3 pt-2">
                     <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent hover:scale-110 text-white transition-all" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                        <i class="fa-brands fa-facebook-f text-lg"></i>
                     </a>
                     <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent hover:scale-110 text-white transition-all" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram text-sm"></i>
+                        <i class="fa-brands fa-instagram text-lg"></i>
                     </a>
                     <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-accent hover:scale-110 text-white transition-all" aria-label="YouTube">
-                        <i class="fa-brands fa-youtube text-sm"></i>
+                        <i class="fa-brands fa-youtube text-lg"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Kolom 2: Jelajahi -->
             <div>
-                <h3 class="text-base font-bold text-white mb-5 tracking-wider uppercase">Jelajahi</h3>
-                <div class="space-y-3 text-sm">
-                    <a href="destination.html" class="block text-primary transition-colors font-bold">Destinasi Populer</a>
-                    <a href="kuliner.html" class="block hover:text-primary transition-colors font-bold">Kuliner Khas</a>
-                    <a href="hotel.html" class="block hover:text-primary transition-colors font-bold">Hotel & Akomodasi</a>
-                    <a href="event.html" class="block hover:text-primary transition-colors font-bold">Event & Festival</a>
-                </div>
+                <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Jelajahi</h3>
+                <nav class="space-y-3 text-sm flex flex-col">
+                    <a href="destination.html" class="hover:text-primary hover:translate-x-1 transition-all">Destinasi Populer</a>
+                    <a href="kuliner.html" class="hover:text-primary hover:translate-x-1 transition-all">Kuliner Khas</a>
+                    <a href="hotel.html" class="hover:text-primary hover:translate-x-1 transition-all">Hotel & Akomodasi</a>
+                    <a href="event.html" class="hover:text-primary hover:translate-x-1 transition-all">Event & Festival</a>
+                </nav>
             </div>
 
-            <!-- Kolom 3: Bantuan -->
             <div>
-                <h3 class="text-base font-bold text-white mb-5 tracking-wider uppercase">Bantuan</h3>
-                <div class="space-y-3 text-sm">
-                    <a href="faq.html" class="block hover:text-primary transition-colors">FAQ</a>
-                    <a href="tentang.html" class="block hover:text-primary transition-colors">Tentang Kami</a>
-                    <a href="kontak.html" class="block hover:text-primary transition-colors">Hubungi Kami</a>
-                    <a href="kebijakan.html" class="block hover:text-primary transition-colors">Kebijakan Privasi</a>
-                </div>
+                <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Bantuan</h3>
+                <nav class="space-y-3 text-sm flex flex-col">
+                    <a href="faq.html" class="hover:text-primary hover:translate-x-1 transition-all">FAQ</a>
+                    <a href="tentang.html" class="hover:text-primary hover:translate-x-1 transition-all">Tentang Kami</a>
+                    <a href="kontak.html" class="hover:text-primary hover:translate-x-1 transition-all">Hubungi Kami</a>
+                    <a href="kebijakan.html" class="hover:text-primary hover:translate-x-1 transition-all">Kebijakan Privasi</a>
+                </nav>
             </div>
 
-            <!-- Kolom 4: Hubungi Kami -->
             <div>
-                <h3 class="text-base font-bold text-white mb-5 tracking-wider uppercase">Kantor Kami</h3>
+                <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Kantor Kami</h3>
                 <div class="space-y-4 text-sm">
                     <div class="flex items-start gap-3">
-                        <i class="fa-solid fa-map-marker-alt text-primary mt-1"></i>
+                        <i class="fa-solid fa-map-marker-alt text-primary mt-1 w-4 text-center"></i>
                         <span>Jl. Pahlawan No. 1, Sidoarjo, Jawa Timur, 61212</span>
                     </div>
                     <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-phone text-primary"></i>
-                        <span>(031) 123-4567</span>
+                        <i class="fa-solid fa-phone text-primary w-4 text-center"></i>
+                        <a href="tel:+62311234567" class="hover:text-primary transition-colors">(031) 123-4567</a>
                     </div>
                     <div class="flex items-center gap-3">
-                        <i class="fa-solid fa-envelope text-primary"></i>
-                        <span>info@sidodolan.id</span>
+                        <i class="fa-solid fa-envelope text-primary w-4 text-center"></i>
+                        <a href="mailto:info@sidodolan.id" class="hover:text-primary transition-colors">info@sidodolan.id</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bagian Bawah: Copyright -->
-    <div class="py-4">
-        <div class="pt-6 border-t border-white/20 text-center text-white/70 text-sm">
+    <div class="bg-black/20">
+        <div class="container py-6 text-center text-white/70 text-sm">
             <p>&copy; 2025 SidoDolan. Semua Hak Cipta Dilindungi. Dibuat dengan <i class="fa-solid fa-heart text-primary"></i> di Sidoarjo.</p>
         </div>
     </div>

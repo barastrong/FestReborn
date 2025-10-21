@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- DATA (SAMA SEPERTI SEBELUMNYA) ---
     let allData = [
         { type: 'Destinasi', name: "Kampung Batik Jetis", lokasi: "Jetis, Sidoarjo", category: "Budaya", image: "https://cdn.ngopibareng.id/uploads/2023/2023-09-03/kampung-batik-jetis-destinasi-umkm-lokal-di-gelaran-porprov--01", rating: 4.6, harga: 5000, description: "Jelajahi pusat kerajinan batik tulis khas Sidoarjo dengan motif yang unik dan penuh warna. Lihat langsung proses pembuatan dan beli oleh-oleh otentik." },
         { type: 'Destinasi', name: "Candi Pari", lokasi: "Porong, Sidoarjo", category: "Sejarah", image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", rating: 4.7, harga: 10000, description: "Saksikan kemegahan peninggalan arsitektur era Majapahit. Candi ini menawarkan suasana tenang dan spot foto yang instagramable." },

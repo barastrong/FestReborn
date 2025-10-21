@@ -1,6 +1,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const kuliner = [
-                { name: "Sentra Kuliner G-Walk", category: "Rumah Makan", image: "https://cdn.antaranews.com/cache/1200x800/2021/07/20/SWK-surabaya_1.jpeg", rating: 4.5 },
+                {id:'sentra-kuliner-gwalk', name: "Sentra Kuliner G-Walk", category: "Rumah Makan", image: "https://cdn.antaranews.com/cache/1200x800/2021/07/20/SWK-surabaya_1.jpeg", rating: 4.5 },
                 { name: "Depot Bu Rudy", category: "Makanan", image: "https://media.suara.com/pictures/653x366/2022/09/12/13514-depot-bu-rudy.jpg", rating: 4.8 },
                 { name: "Soto Cak Har", category: "Makanan", image: "https://img.inews.co.id/media/822/files/inews_new/2020/12/10/soto.jpg", rating: 3.4 },
                 { name: "Es Krim Zangrandi", category: "Minuman", image: "https://www.surabayatravel.com/wp-content/uploads/2018/07/Es-Krim-Zangrandi.jpg", rating: 4.9 },
@@ -83,7 +83,7 @@
                     }
                     
                     return `
-                    <a href="#" class="block card-hover" style="animation-delay: ${index * 0.05}s;">
+                    <a href="detailKuliner.html?id=${item.id}" class="block card-hover" style="animation-delay: ${index * 0.05}s;">
                         <div class="bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 h-full border-4 border-white">
                             <div class="relative h-48 overflow-hidden">
                                 <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500">

@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
         const hotels = [
             { 
+                id:"hotel-majapahit-surabaya",
                 name: "Hotel Majapahit Surabaya", 
                 lokasi: "Jl. Tunjungan No.65, Surabaya", 
                 rating: 4.8, 
                 image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800",
                 description: "Hotel mewah dengan arsitektur kolonial yang memukau, menawarkan pengalaman menginap tak terlupakan dengan fasilitas lengkap termasuk kolam renang, spa, dan restoran fine dining.",
-                harga: 1500000
             },
             { 
                 name: "Ibis Styles Surabaya Jemursari", 
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.5, 
                 image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
                 description: "Hotel modern dengan desain colorful dan vibrant, cocok untuk traveler muda yang mencari kenyamanan dengan harga terjangkau. Dilengkapi dengan breakfast buffet yang lezat.",
-                harga: 450000
             },
             { 
                 name: "Bumi Surabaya City Resort", 
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.6, 
                 image: "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=800",
                 description: "Resort hotel dengan suasana tropis di tengah kota, menawarkan ketenangan dan relaksasi. Fasilitas lengkap dengan kolam renang outdoor, gym, dan taman yang asri.",
-                harga: 850000
             },
             { 
                 name: "Novotel Surabaya Hotel & Suites", 
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.7, 
                 image: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800",
                 description: "Hotel bintang 4 dengan lokasi strategis, menyediakan kamar yang luas dan nyaman. Perfect untuk business travelers dengan meeting rooms dan business center yang modern.",
-                harga: 950000
             },
             { 
                 name: "The Westin Surabaya", 
@@ -38,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.9, 
                 image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800",
                 description: "Hotel premium dengan standar internasional, menawarkan luxury experience dengan kamar super luas, bathroom mewah, dan pemandangan kota yang spektakuler dari rooftop bar.",
-                harga: 2200000
             },
             { 
                 name: "Favehotel Graha Pena Surabaya", 
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.3, 
                 image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800",
                 description: "Budget hotel dengan fasilitas memadai dan lokasi strategis dekat dengan pusat bisnis. Kamar bersih dan nyaman dengan WiFi cepat, cocok untuk short stay.",
-                harga: 350000
             },
             { 
                 name: "JW Marriott Hotel Surabaya", 
@@ -54,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.8, 
                 image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
                 description: "Luxury hotel dengan service excellent, interior mewah, dan lokasi prime di pusat kota. Dilengkapi dengan sky lounge, infinity pool, dan ballroom untuk events besar.",
-                harga: 1800000
             },
             { 
                 name: "Swiss-Belinn Manyar Surabaya", 
@@ -62,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.4, 
                 image: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800",
                 description: "Hotel modern dengan konsep minimalis yang nyaman, menyediakan kamar dengan interior smart dan functional. Breakfast menu bervariasi dengan pilihan western dan local cuisine.",
-                harga: 550000
             },
             { 
                 name: "Sheraton Surabaya Hotel & Towers", 
@@ -70,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.7, 
                 image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800",
                 description: "Hotel established dengan reputasi excellent, menawarkan refined elegance dan top-notch service. Executive lounge dengan complimentary drinks dan canapés setiap evening.",
-                harga: 1600000
             },
             { 
                 name: "RedDoorz near Ciputra World Surabaya", 
@@ -78,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.2, 
                 image: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800",
                 description: "Budget accommodation dengan lokasi dekat mall dan entertainment center. Basic facilities tapi clean dan comfortable, perfect untuk backpackers dan budget travelers.",
-                harga: 200000
             },
             { 
                 name: "Vasa Hotel Surabaya", 
@@ -86,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.5, 
                 image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=800",
                 description: "Hotel dengan desain kontemporer yang stylish, menyediakan comfortable rooms dengan city view. Rooftop restaurant menyajikan local dan international dishes dengan view panoramic.",
-                harga: 750000
             },
             { 
                 name: "Santika Premiere Gubeng Surabaya", 
@@ -94,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 rating: 4.6, 
                 image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
                 description: "Hotel dengan Indonesian hospitality yang warm, menawarkan spacious rooms dan complete amenities. Pool area yang cozy perfect untuk relax setelah long day exploring the city.",
-                harga: 800000
             }
         ];
         let currentPage = 1;
@@ -102,20 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const gridContainer = document.getElementById('hotels-grid');
         const paginationContainer = document.getElementById('pagination');
         const ratingFilter = document.getElementById('rating-filter');
-        const priceFilter = document.getElementById('price-filter');
         const searchInput = document.getElementById('search-input');
         const searchButton = document.getElementById('search-button');
-        function formatPrice(price) {
-            return new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0
-            }).format(price);
-        }
         function renderContent() {
             const searchTerm = searchInput.value.toLowerCase();
             const ratingSort = ratingFilter.value;
-            const priceSort = priceFilter.value;
             let filtered = hotels.filter(h =>
                 h.name.toLowerCase().includes(searchTerm) ||
                 h.lokasi.toLowerCase().includes(searchTerm)
@@ -127,12 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 filtered.sort((a, b) => a.rating - b.rating);
             }
             
-            // Sorting by Price (will override rating if both selected)
-            if (priceSort === 'low') {
-                filtered.sort((a, b) => a.harga - b.harga);
-            } else if (priceSort === 'high') {
-                filtered.sort((a, b) => b.harga - a.harga);
-            }
             if (filtered.length === 0) {
                 gridContainer.innerHTML = `
                     <div class="col-span-1 lg:col-span-2 text-center text-slate-500 py-20">
@@ -170,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 return `
-                <a href="#" class="block">
+                <a href="detailHotel.html?id=${item.id}" class="block">
                     <div class="bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 border-4 border-white flex flex-col md:flex-row h-full">
                         <div class="relative md:w-2/5 h-64 md:h-auto overflow-hidden">
                             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
@@ -192,16 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 </div>
                                 <p class="text-slate-600 text-sm mb-4 line-clamp-2">${item.description}</p>
                             </div>
-                            <div class="flex items-center justify-between pt-4 border-t border-slate-200">
-                                <div>
-                                    <p class="text-xs text-slate-500 mb-1">Mulai dari</p>
-                                    <p class="text-2xl font-bold text-primary-dark">${formatPrice(item.harga)}</p>
-                                    <p class="text-xs text-slate-500">per malam</p>
-                                </div>
                                 <button class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-xl transition-all shadow-md hover:shadow-lg">
                                     Lihat Detail
                                 </button>
-                            </div>
                         </div>
                     </div>
                 </a>
@@ -253,7 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         ratingFilter.addEventListener('change', handleSearch);
-        priceFilter.addEventListener('change', handleSearch);
         renderContent();
     }
 );
