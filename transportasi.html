@@ -31,12 +31,12 @@
         }
 
         .filter-btn.active i {
-            color: #F5AD18; /* Warna primary untuk ikon */
+            color: #F5AD18;
         }
 
         .filter-btn i {
             transition: color 0.3s ease;
-            color: #9ca3af; /* abu default */
+            color: #9ca3af;
         }
     </style>
 
@@ -90,9 +90,33 @@
 
                 <a href="lokasi.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
             </div>
-            <a href="home.html" class="md:hidden text-primary p-2 text-3xl"><i class="fa-solid fa-house"></i></a>
+            <button id="menu-toggle-btn" class="md:hidden text-slate-800 p-2 text-2xl hover:text-primary transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
+    
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-72 bg-white shadow-xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="p-5 flex items-center justify-between border-b">
+            <a href="home.html">
+                <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-12 w-auto">
+            </a>
+            <button id="menu-close-btn" class="text-slate-600 hover:text-primary-dark text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="p-5 flex flex-col gap-4 text-lg">
+            <a href="home.html" class="text-slate-700 hover:text-primary">Home</a>
+            <a href="destination.html" class="text-slate-700 hover:text-primary">Destinasi</a>
+            <a href="kuliner.html" class="text-slate-700 hover:text-primary">Kuliner</a>
+            <span class="font-semibold text-primary pt-2">Akomodasi</span>
+            <a href="hotel.html" class="text-slate-700 hover:text-primary pl-4">- Hotel</a>
+            <a href="transportasi.html" class="text-primary font-semibold pl-4">- Transportasi</a>
+            <a href="lokasi.html" class="text-slate-700 hover:text-primary pt-2">Lokasi Kamu</a>
+        </nav>
+    </div>
+
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300"></div>
 
     <main>
         <section class="relative h-[40vh] flex items-center justify-center bg-cover bg-center text-white" style="background-image: url(https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1887&auto=format&fit=crop)">
@@ -110,16 +134,16 @@
                         <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
                             <h3 class="text-xl font-bold text-slate-800 mb-4">Pilih Titik Keberangkatan</h3>
                             <div id="filter-container" class="space-y-3">
-                                <button data-filter="all" class="filter-btn active w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-gray-400 border-2 transition-all">
+                                <button data-filter="all" class="filter-btn active w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-slate-700 border-2 transition-all">
                                     <i class="fa-solid fa-route w-5 text-center"></i> Semua Transportasi
                                 </button>
-                                <button data-filter="terminal" class="filter-btn w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-gray-400 border-2  transition-all">
+                                <button data-filter="terminal" class="filter-btn w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-slate-700 border-2 transition-all">
                                     <i class="fa-solid fa-bus-simple w-5 text-center"></i> Terminal
                                 </button>
-                                <button data-filter="stasiun" class="filter-btn w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-gray-400 border-2  transition-all">
+                                <button data-filter="stasiun" class="filter-btn w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-slate-700 border-2 transition-all">
                                     <i class="fa-solid fa-train-subway w-5 text-center"></i> Stasiun
                                 </button>
-                                <button data-filter="bandara" class="filter-btn w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-gray-400 border-2  transition-all">
+                                <button data-filter="bandara" class="filter-btn w-full text-left flex items-center gap-3 p-4 rounded-lg font-semibold text-slate-700 border-2 transition-all">
                                     <i class="fa-solid fa-plane-departure w-5 text-center"></i> Bandara
                                 </button>
                             </div>
@@ -130,7 +154,7 @@
                          <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
                              <h3 class="text-xl font-bold text-slate-800 mb-4">Peta Lokasi Transportasi Utama</h3>
                              <div class="aspect-video rounded-lg overflow-hidden">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63309.11326417937!2d112.67859845187744!3d-7.447813214587396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e696f8a35573%3A0x3027a76e352bd30!2sSidoarjo%2C%2Sidoarjo%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126646.6896896356!2d112.63737209726561!3d-7.447544000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e696f8a35573%3A0x3027a76e352bd30!2sSidoarjo%2C%20Kabupaten%20Sidoarjo%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1672895698308!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                          </div>
                     </div>

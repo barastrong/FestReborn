@@ -55,9 +55,33 @@
 
                 <a href="lokasi.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
             </div>
-            <a href="home.html" class="md:hidden text-primary p-2 text-3xl"><i class="fa-solid fa-house"></i></a>
+            <button id="menu-toggle-btn" class="md:hidden text-slate-800 p-2 text-2xl hover:text-primary transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-72 bg-white shadow-xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="p-5 flex items-center justify-between border-b">
+            <a href="home.html">
+                <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-12 w-auto">
+            </a>
+            <button id="menu-close-btn" class="text-slate-600 hover:text-primary-dark text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="p-5 flex flex-col gap-4 text-lg">
+            <a href="home.html" class="text-slate-700 hover:text-primary">Home</a>
+            <a href="destination.html" class="text-slate-700 hover:text-primary">Destinasi</a>
+            <a href="kuliner.html" class="text-slate-700 hover:text-primary">Kuliner</a>
+            <span class="font-semibold text-primary pt-2">Akomodasi</span>
+            <a href="hotel.html" class="text-primary font-semibold pl-4">- Hotel</a>
+            <a href="transportasi.html" class="text-slate-700 hover:text-primary pl-4">- Transportasi</a>
+            <a href="lokasi.html" class="text-slate-700 hover:text-primary pt-2">Lokasi Kamu</a>
+        </nav>
+    </div>
+
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300"></div>
 
     <main id="main-content" class="container py-12 md:py-16">
         <div class="mb-6">
@@ -155,13 +179,13 @@
                         <a href="home.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Home
                         </a>
-                        <a href="destination.html" class="block w-full md:w-auto text-accent font-bold hover:translate-x-2 transition-all">
+                        <a href="destination.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Destinasi
                         </a>
                         <a href="kuliner.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Kuliner
                         </a>
-                        <a href="hotels.html" class="block w-full md:w-auto text-white/80 hover:text-white hover:translate-x-2 transition-all">
+                        <a href="hotel.html" class="block w-full md:w-auto text-accent font-bold hover:translate-x-2 transition-all">
                             <i class="fa-solid fa-chevron-right text-xs mr-2"></i>Hotel
                         </a>
                     </div>

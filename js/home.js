@@ -249,8 +249,10 @@ document.addEventListener('DOMContentLoaded', () => {
     modalImage.alt = data.name;
     modalHighlights.innerHTML = data.highlights.map(item => `<li class="flex items-start"><i class="fa-solid fa-location-dot text-primary mr-3 mt-1 text-lg"></i><span class="text-slate-700">${item}</span></li>`).join('');
     modalFeatures.innerHTML = data.features.map(feature => `<li class="flex items-center"><i class="fa-solid ${feature.included ? 'fa-check text-primary' : 'fa-xmark text-slate-400'} mr-3 text-lg"></i><span class="text-slate-700">${feature.text}</span></li>`).join('');
-    modal.classList.remove('modal-hidden');
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
     document.body.style.overflow = 'hidden';
+    modal.classList.remove('modal-hidden');
     setTimeout(() => {
       modal.classList.remove('opacity-0');
       modalPanel.classList.remove('scale-95', 'opacity-0');
@@ -260,8 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeModal = () => {
     modal.classList.add('opacity-0');
     modalPanel.classList.add('scale-95', 'opacity-0');
-    document.body.style.overflow = 'auto';
-    setTimeout(() => modal.classList.add('modal-hidden'), 300);
+    setTimeout(() => {
+      document.body.style.overflow = 'auto';
+      document.body.style.paddingRight = '';
+      modal.classList.add('modal-hidden');
+    }, 300);
   };
 
   document.querySelectorAll('button[data-package-id]').forEach(button => {
@@ -283,4 +288,52 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+  const scrollContainer = document.getElementById('top-destinasi-grid');
+  const scrollLeftBtn = document.getElementById('scroll-left-btn');
+  const scrollRightBtn = document.getElementById('scroll-right-btn');
+
+  if (scrollContainer && scrollLeftBtn && scrollRightBtn) {
+    const updateScrollButtons = () => {
+      scrollLeftBtn.disabled = scrollContainer.scrollLeft <= 0;
+      const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+      scrollRightBtn.disabled = scrollContainer.scrollLeft >= maxScrollLeft - 1;
+    };
+    scrollRightBtn.addEventListener('click', () => {
+      const scrollAmount = scrollContainer.clientWidth * 0.8;
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+    scrollLeftBtn.addEventListener('click', () => {
+      const scrollAmount = scrollContainer.clientWidth * 0.8;
+      scrollContainer.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    scrollContainer.addEventListener('scroll', updateScrollButtons);
+    window.addEventListener('resize', updateScrollButtons);
+    setTimeout(updateScrollButtons, 500);
+  }
+
+  const menuToggleBtn = document.getElementById('menu-toggle-btn');
+  const menuCloseBtn = document.getElementById('menu-close-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuOverlay = document.getElementById('menu-overlay');
+
+  const openMenu = () => {
+    mobileMenu.classList.remove('-translate-x-full');
+    menuOverlay.classList.remove('hidden');
+    setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileMenu.classList.add('-translate-x-full');
+    menuOverlay.classList.add('opacity-0');
+    setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+    document.body.style.overflow = 'auto';
+  };
+  
+  if (menuToggleBtn && mobileMenu && menuCloseBtn && menuOverlay) {
+    menuToggleBtn.addEventListener('click', openMenu);
+    menuCloseBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+  }
 });

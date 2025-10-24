@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    const openMenu = () => {
+        mobileMenu.classList.remove('-translate-x-full');
+        menuOverlay.classList.remove('hidden');
+        setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.add('-translate-x-full');
+        menuOverlay.classList.add('opacity-0');
+        setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+        document.body.style.overflow = 'auto';
+    };
+
+    if (menuToggleBtn && mobileMenu && menuCloseBtn && menuOverlay) {
+        menuToggleBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+    
     const transportationData = [
         {
             id: 'trans-sidoarjo',

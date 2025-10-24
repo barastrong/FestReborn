@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let allData = [
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    const openMenu = () => {
+        mobileMenu.classList.remove('-translate-x-full');
+        menuOverlay.classList.remove('hidden');
+        setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.add('-translate-x-full');
+        menuOverlay.classList.add('opacity-0');
+        setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+        document.body.style.overflow = 'auto';
+    };
+
+    if (menuToggleBtn && mobileMenu && menuCloseBtn && menuOverlay) {
+        menuToggleBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+    }
+
+    const allData = [
         { type: 'Destinasi', name: "Kampung Batik Jetis", lokasi: "Jetis, Sidoarjo", category: "Budaya", image: "https://cdn.ngopibareng.id/uploads/2023/2023-09-03/kampung-batik-jetis-destinasi-umkm-lokal-di-gelaran-porprov--01", rating: 4.6, harga: 5000, description: "Jelajahi pusat kerajinan batik tulis khas Sidoarjo dengan motif yang unik dan penuh warna. Lihat langsung proses pembuatan dan beli oleh-oleh otentik." },
         { type: 'Destinasi', name: "Candi Pari", lokasi: "Porong, Sidoarjo", category: "Sejarah", image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", rating: 4.7, harga: 10000, description: "Saksikan kemegahan peninggalan arsitektur era Majapahit. Candi ini menawarkan suasana tenang dan spot foto yang instagramable." },
         { type: 'Destinasi', name: "Pulau Sarinah", lokasi: "Tlocor, Sidoarjo", category: "Alam", image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", rating: 4.5, harga: 25000, description: "Nikmati keindahan alam pesisir dengan hutan mangrove yang asri. Cocok untuk bersantai, memancing, atau sekadar menikmati pemandangan laut." },
@@ -21,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { type: 'Kuliner', name: "Sate Klopo Ondomohen", lokasi: "Genteng, Surabaya", category: "Sate", image: "https://img.inews.co.id/media/822/files/inews_new/2019/06/15/sate_klopo.jpg", rating: 4.8, harga: 40000, description: "Sate ayam unik yang dibakar dengan parutan kelapa, memberikan aroma dan rasa yang khas dan sangat lezat." },
     ];
     
-    // --- FUNGSI & INISIALISASI DASAR ---
     function shuffle(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -32,80 +56,177 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentPage = 1;
     const itemsPerPage = 9;
+    let selectedCategory = 'All';
+
     const gridContainer = document.getElementById('grid-container');
     const paginationContainer = document.getElementById('pagination');
-    const categoryFilter = document.getElementById('category-filter');
     const searchInput = document.getElementById('search-input');
-    const ratingSortFilter = document.getElementById('rating-sort');
 
-    // --- LOGIKA SLIDER KUSTOM ---
-    const minSlider = document.getElementById('min-price-slider');
-    const maxSlider = document.getElementById('max-price-slider');
+    // Category Dropdown Elements
+    const categoryDropdownContainer = document.getElementById('category-dropdown-container');
+    const categoryDropdownButton = document.getElementById('category-dropdown-button');
+    const categoryDropdownMenu = document.getElementById('category-dropdown-menu');
+    const selectedCategoryText = document.getElementById('selected-category-text');
+    const categoryChevron = document.getElementById('category-chevron');
+
+    // Price Slider Elements
+    const minPriceSlider = document.getElementById('min-price-slider');
+    const maxPriceSlider = document.getElementById('max-price-slider');
     const minPriceDisplay = document.getElementById('min-price-display');
     const maxPriceDisplay = document.getElementById('max-price-display');
-    const sliderRange = document.getElementById('price-slider-range');
+    const priceSliderRange = document.getElementById('price-slider-range');
     const priceGap = 50000;
 
-    const prices = allData.map(item => item.harga).filter(harga => harga !== null);
-    const minPrice = 0;
-    const maxPrice = Math.max(...prices, 2500000);
+    // Rating Slider Elements
+    const minRatingSlider = document.getElementById('min-rating-slider');
+    const maxRatingSlider = document.getElementById('max-rating-slider');
+    const minRatingDisplay = document.getElementById('min-rating-display');
+    const maxRatingDisplay = document.getElementById('max-rating-display');
+    const ratingSliderRange = document.getElementById('rating-slider-range');
+    const ratingGap = 0.5;
 
-    // Setup nilai awal slider
-    minSlider.min = maxSlider.min = minPrice;
-    minSlider.max = maxSlider.max = maxPrice;
-    minSlider.value = minPrice;
-    maxSlider.value = maxPrice;
+    // Category Dropdown Logic
+    const toggleDropdown = () => {
+        const isHidden = categoryDropdownMenu.classList.contains('hidden');
+        if (isHidden) {
+            categoryDropdownMenu.classList.remove('hidden');
+            setTimeout(() => {
+                categoryDropdownMenu.classList.remove('opacity-0');
+                categoryDropdownMenu.classList.add('translate-y-0');
+                categoryChevron.classList.add('rotate-180');
+            }, 10);
+        } else {
+            categoryDropdownMenu.classList.add('opacity-0');
+            categoryDropdownMenu.classList.add('-translate-y-2');
+            categoryChevron.classList.remove('rotate-180');
+            setTimeout(() => categoryDropdownMenu.classList.add('hidden'), 200);
+        }
+    };
 
-    function updateSliderVisuals() {
-        const minVal = parseInt(minSlider.value);
-        const maxVal = parseInt(maxSlider.value);
+    categoryDropdownButton.addEventListener('click', toggleDropdown);
+
+    window.addEventListener('click', (e) => {
+        if (!categoryDropdownContainer.contains(e.target)) {
+            if (!categoryDropdownMenu.classList.contains('hidden')) {
+                toggleDropdown();
+            }
+        }
+    });
+
+    function populateCategories() {
+        const categories = ['All', 'Destinasi', 'Hotel', 'Kuliner'];
+        categoryDropdownMenu.innerHTML = '';
+        categories.forEach(category => {
+            const button = document.createElement('button');
+            const displayName = category === 'All' ? 'Semua' : category;
+            button.textContent = displayName;
+            button.dataset.category = category;
+            button.className = 'w-full text-left px-4 py-2 rounded-md transition-colors text-slate-700 hover:bg-slate-100 hover:text-primary';
+            
+            button.addEventListener('click', () => {
+                selectedCategory = button.dataset.category;
+                selectedCategoryText.textContent = displayName;
+                
+                Array.from(categoryDropdownMenu.children).forEach(child => child.classList.remove('bg-blue-50', 'text-primary-dark', 'font-semibold'));
+                button.classList.add('bg-blue-50', 'text-primary-dark', 'font-semibold');
+
+                handleSearch();
+                toggleDropdown();
+            });
+            categoryDropdownMenu.appendChild(button);
+        });
+    }
+
+    // Sliders Logic
+    function setupPriceSlider() {
+        const prices = allData.map(item => item.harga).filter(harga => harga !== null);
+        const minPrice = 0;
+        const maxPrice = Math.max(...prices, 2500000);
+
+        minPriceSlider.min = maxPriceSlider.min = minPrice;
+        minPriceSlider.max = maxPriceSlider.max = maxPrice;
+        minPriceSlider.value = minPrice;
+        maxPriceSlider.value = maxPrice;
+
+        minPriceSlider.addEventListener('input', updatePriceSliderVisuals);
+        maxPriceSlider.addEventListener('input', updatePriceSliderVisuals);
+        minPriceSlider.addEventListener('change', handleSearch);
+        maxPriceSlider.addEventListener('change', handleSearch);
+        updatePriceSliderVisuals();
+    }
+
+    function updatePriceSliderVisuals() {
+        let minVal = parseInt(minPriceSlider.value);
+        let maxVal = parseInt(maxPriceSlider.value);
         
-        // Mencegah slider saling menimpa
         if (maxVal - minVal < priceGap) {
-            if (event.target.id === "min-price-slider") {
-                minSlider.value = maxVal - priceGap;
+            if (event && event.target === minPriceSlider) {
+                minPriceSlider.value = maxVal - priceGap;
             } else {
-                maxSlider.value = minVal + priceGap;
+                maxPriceSlider.value = minVal + priceGap;
             }
         }
         
-        // Update display text dan posisi range bar
-        minPriceDisplay.textContent = formatPriceSimple(minSlider.value);
-        maxPriceDisplay.textContent = formatPriceSimple(maxSlider.value);
-        const minPercent = ((minSlider.value - minSlider.min) / (minSlider.max - minSlider.min)) * 100;
-        const maxPercent = ((maxSlider.value - maxSlider.min) / (maxSlider.max - maxSlider.min)) * 100;
-        sliderRange.style.left = `${minPercent}%`;
-        sliderRange.style.right = `${100 - maxPercent}%`;
+        minPriceDisplay.textContent = formatPriceSimple(minPriceSlider.value);
+        maxPriceDisplay.textContent = formatPriceSimple(maxPriceSlider.value);
+        const minPercent = ((minPriceSlider.value - minPriceSlider.min) / (minPriceSlider.max - minPriceSlider.min)) * 100;
+        const maxPercent = ((maxPriceSlider.value - maxPriceSlider.min) / (maxPriceSlider.max - maxPriceSlider.min)) * 100;
+        priceSliderRange.style.left = `${minPercent}%`;
+        priceSliderRange.style.right = `${100 - maxPercent}%`;
+    }
+    
+    function setupRatingSlider() {
+        minRatingSlider.min = 0;
+        maxRatingSlider.min = 0;
+        minRatingSlider.max = 5;
+        maxRatingSlider.max = 5;
+        minRatingSlider.step = 0.1;
+        maxRatingSlider.step = 0.1;
+        minRatingSlider.value = 0;
+        maxRatingSlider.value = 5;
+
+        minRatingSlider.addEventListener('input', updateRatingSliderVisuals);
+        maxRatingSlider.addEventListener('input', updateRatingSliderVisuals);
+        minRatingSlider.addEventListener('change', handleSearch);
+        maxRatingSlider.addEventListener('change', handleSearch);
+        updateRatingSliderVisuals();
     }
 
-    minSlider.addEventListener('input', updateSliderVisuals);
-    maxSlider.addEventListener('input', updateSliderVisuals);
-    minSlider.addEventListener('change', handleSearch);
-    maxSlider.addEventListener('change', handleSearch);
-    updateSliderVisuals(); // Panggil sekali untuk setup awal
+    function updateRatingSliderVisuals() {
+        let minVal = parseFloat(minRatingSlider.value);
+        let maxVal = parseFloat(maxRatingSlider.value);
 
-    // --- FUNGSI RENDER UTAMA ---
+        if (maxVal - minVal < ratingGap) {
+            if (event && event.target === minRatingSlider) {
+                minRatingSlider.value = (maxVal - ratingGap).toFixed(1);
+            } else {
+                maxRatingSlider.value = (minVal + ratingGap).toFixed(1);
+            }
+        }
+        
+        minRatingDisplay.textContent = parseFloat(minRatingSlider.value).toFixed(1);
+        maxRatingDisplay.textContent = parseFloat(maxRatingSlider.value).toFixed(1);
+        const minPercent = (minRatingSlider.value / minRatingSlider.max) * 100;
+        const maxPercent = (maxRatingSlider.value / maxRatingSlider.max) * 100;
+        ratingSliderRange.style.left = `${minPercent}%`;
+        ratingSliderRange.style.right = `${100 - maxPercent}%`;
+    }
+
+    // Main Rendering Logic
     function renderContent() {
         const searchTerm = searchInput.value.toLowerCase();
-        const selectedCategory = categoryFilter.value;
-        const ratingSort = ratingSortFilter.value;
-        const minPriceValue = parseInt(minSlider.value);
-        const maxPriceValue = parseInt(maxSlider.value);
+        const minPriceValue = parseInt(minPriceSlider.value);
+        const maxPriceValue = parseInt(maxPriceSlider.value);
+        const minRatingValue = parseFloat(minRatingSlider.value);
+        const maxRatingValue = parseFloat(maxRatingSlider.value);
 
         let filtered = allData.filter(item => {
             const matchesSearch = item.name.toLowerCase().includes(searchTerm) || item.lokasi.toLowerCase().includes(searchTerm);
             const matchesCategory = selectedCategory === 'All' || item.type === selectedCategory;
             const matchesPrice = item.harga === null || (item.harga >= minPriceValue && item.harga <= maxPriceValue);
-            return matchesSearch && matchesCategory && matchesPrice;
+            const matchesRating = item.rating === null || (item.rating >= minRatingValue && item.rating <= maxRatingValue);
+            return matchesSearch && matchesCategory && matchesPrice && matchesRating;
         });
-
-        if (ratingSort !== 'default') {
-            filtered.sort((a, b) => {
-                const ratingA = a.rating || 0;
-                const ratingB = b.rating || 0;
-                return ratingSort === 'high' ? ratingB - ratingA : ratingA - ratingB;
-            });
-        }
 
         if (filtered.length === 0) {
             displayNoResults();
@@ -120,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderPagination(totalPages);
     }
     
-    // --- SISA FUNGSI PEMBANTU (TIDAK BERUBAH) ---
     function createCard(item) {
         let detailsHtml = `
             <p class="text-slate-500 text-sm mb-4 line-clamp-2 h-10">${item.description}</p>
@@ -173,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationContainer.innerHTML = '';
     }
     
+    // Helper Functions
     function generateStars(rating) {
         if (!rating) return '<span class="text-xs text-slate-400">Belum ada rating</span>';
         let starsHTML = '';
@@ -188,19 +309,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function formatPriceSimple(price) {
+        price = Number(price);
         if (price >= 1000000) return `Rp ${(price / 1000000).toFixed(1).replace('.0', '')}jt`;
         if (price >= 1000) return `Rp ${(price / 1000).toFixed(0)}rb`;
         return `Rp ${price}`;
     }
     
+    // Main Handler
     function handleSearch() {
         currentPage = 1;
         renderContent();
     }
 
     searchInput.addEventListener('input', handleSearch);
-    categoryFilter.addEventListener('change', handleSearch);
-    ratingSortFilter.addEventListener('change', handleSearch);
 
+    // Initialize everything
+    populateCategories();
+    setupPriceSlider();
+    setupRatingSlider();
     renderContent();
 });

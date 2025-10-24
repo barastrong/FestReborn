@@ -38,7 +38,7 @@
                 <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-14 w-auto">
             </a>
             <div class="hidden md:flex items-center gap-1 font-semibold text-lg">
-                <a href="home.html" class="text-slate-600 hover:text-priimary px-5 py-2 rounded-md transition-colors">Home</a>
+                <a href="home.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Home</a>
                 <a href="destination.html" class="text-primary px-5 py-2">Destinasi</a>
                 <a href="kuliner.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Kuliner</a>
                 
@@ -55,9 +55,36 @@
 
                 <a href="lokasi.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
             </div>
-            <a href="home.html" class="md:hidden text-primary p-2 text-3xl"><i class="fa-solid fa-house"></i></a>
+            <!-- TOMBOL HAMBURGER MENU UNTUK MOBILE -->
+            <button id="menu-toggle-btn" class="md:hidden text-slate-800 p-2 text-2xl hover:text-primary transition-colors">
+                <i class="fa-solid fa-bars"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- MENU MOBILE (SAMA SEPERTI HALAMAN DESTINASI) -->
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-72 bg-white shadow-xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="p-5 flex items-center justify-between border-b">
+            <a href="home.html">
+                <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-12 w-auto">
+            </a>
+            <button id="menu-close-btn" class="text-slate-600 hover:text-primary-dark text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="p-5 flex flex-col gap-4 text-lg">
+            <a href="home.html" class="text-slate-700 hover:text-primary">Home</a>
+            <a href="destination.html" class="text-primary font-semibold">Destinasi</a>
+            <a href="kuliner.html" class="text-slate-700 hover:text-primary">Kuliner</a>
+            <span class="font-semibold text-slate-800 pt-2">Akomodasi</span>
+            <a href="hotel.html" class="text-slate-700 hover:text-primary pl-4">- Hotel</a>
+            <a href="transportasi.html" class="text-slate-700 hover:text-primary pl-4">- Transportasi</a>
+            <a href="lokasi.html" class="text-slate-700 hover:text-primary pt-2">Lokasi Kamu</a>
+        </nav>
+    </div>
+
+    <!-- OVERLAY MENU MOBILE -->
+    <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300"></div>
 
     <main id="main-content" class="container mx-auto px-4 py-12 md:py-16">
         <div class="mb-8">
@@ -69,7 +96,6 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             
-            <!-- KOLOM KIRI: GALERI & DESKRIPSI -->
             <div class="lg:col-span-2">
                 <div id="gallery-container" class="mb-8">
                     <div class="mb-4 rounded-xl overflow-hidden shadow-xl aspect-video">
@@ -95,7 +121,6 @@
                 </div>
             </div>
             
-            <!-- KOLOM KANAN: SIDEBAR INFORMASI -->
             <div class="lg:col-span-1">
                 <div class="sticky top-28 space-y-6">
                     <div class="p-6 bg-white rounded-2xl shadow-lg border">

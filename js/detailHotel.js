@@ -1,11 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const menuToggleBtn = document.getElementById('menu-toggle-btn');
+    const menuCloseBtn = document.getElementById('menu-close-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    const openMenu = () => {
+        mobileMenu.classList.remove('-translate-x-full');
+        menuOverlay.classList.remove('hidden');
+        setTimeout(() => menuOverlay.classList.remove('opacity-0'), 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.add('-translate-x-full');
+        menuOverlay.classList.add('opacity-0');
+        setTimeout(() => menuOverlay.classList.add('hidden'), 300);
+        document.body.style.overflow = 'auto';
+    };
+
+    if (menuToggleBtn && mobileMenu && menuCloseBtn && menuOverlay) {
+        menuToggleBtn.addEventListener('click', openMenu);
+        menuCloseBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+    }
 
     const hotels = [
         { 
             id: "hotel-majapahit-surabaya",
-            name: "Hotel Majapahit Surabaya", 
-            lokasi: "Jl. Tunjungan No.65, Genteng, Surabaya 60275", 
-            rating: 4.8, 
+            name: "Hotel Majapahit Surabaya",
+            lokasi: "Jl. Tunjungan No.65, Genteng, Surabaya 60275",
+            rating: 4.8,
             images: [
                 "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800",
                 "https://images.unsplash.com/photo-1568084680786-a84f91d1153c?w=800",
@@ -20,19 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     roomName: "MAJAPAHIT BALLROOM",
                     setups: [
-                        { type: 'U Shape', capacity: 60, icon: 'https://placehold.co/100x80/F5AD18/FFFFFF/png?text=U-Shape' },
-                        { type: 'Classroom', capacity: 100, icon: 'https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Classroom' },
-                        { type: 'Theater', capacity: 200, icon: 'https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Theater' },
-                        { type: 'Banquet Rounds', capacity: 120, icon: 'https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Banquet' }
+                        { type: "U Shape", capacity: 60, icon: "https://placehold.co/100x80/F5AD18/FFFFFF/png?text=U-Shape" },
+                        { type: "Classroom", capacity: 100, icon: "https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Classroom" },
+                        { type: "Theater", capacity: 200, icon: "https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Theater" },
+                        { type: "Banquet Rounds", capacity: 120, icon: "https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Banquet" }
                     ]
                 }
             ]
         },
         { 
             id: "the-westin-surabaya",
-            name: "The Westin Surabaya", 
-            lokasi: "Pakuwon Mall, Jl. Raya Lontar No.2, Surabaya 60216", 
-            rating: 4.9, 
+            name: "The Westin Surabaya",
+            lokasi: "Pakuwon Mall, Jl. Raya Lontar No.2, Surabaya 60216",
+            rating: 4.9,
             images: [
                 "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800",
                 "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800",
@@ -47,64 +71,62 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     roomName: "GRAND BALLROOM",
                     setups: [
-                        { type: 'Theater', capacity: 1500, icon: 'https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Theater' },
-                        { type: 'Banquet Rounds', capacity: 800, icon: 'https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Banquet' },
+                        { type: "Theater", capacity: 1500, icon: "https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Theater" },
+                        { type: "Banquet Rounds", capacity: 800, icon: "https://placehold.co/100x80/F5AD18/FFFFFF/png?text=Banquet" }
                     ]
                 }
             ]
-        },
+        }
     ];
 
     const urlParams = new URLSearchParams(window.location.search);
-    const hotelId = urlParams.get('id');
+    const hotelId = urlParams.get("id");
     const hotel = hotels.find(h => h.id === hotelId);
 
-    const mainContent = document.getElementById('main-content');
-    const notFoundDiv = document.getElementById('not-found');
+    const mainContent = document.getElementById("main-content");
+    const notFoundDiv = document.getElementById("not-found");
 
     if (!hotel) {
-        mainContent.classList.add('hidden');
-        notFoundDiv.classList.remove('hidden');
+        mainContent.classList.add("hidden");
+        notFoundDiv.classList.remove("hidden");
         return;
     }
 
-    // --- Mengisi Konten ---
-
     document.title = `${hotel.name} - SidoDolan`;
-    document.getElementById('hotel-name-top').textContent = hotel.name;
-    document.getElementById('hotel-description').textContent = hotel.description;
+    document.getElementById("hotel-name-top").textContent = hotel.name;
+    document.getElementById("hotel-description").textContent = hotel.description;
 
-    const ratingContainer = document.getElementById('rating-container');
+    const ratingContainer = document.getElementById("rating-container");
     const fullStars = Math.floor(hotel.rating);
     const hasHalfStar = hotel.rating % 1 >= 0.5;
-    let starsHTML = '';
+    let starsHTML = "";
     for (let i = 0; i < fullStars; i++) starsHTML += '<i class="fa-solid fa-star text-primary"></i>';
     if (hasHalfStar) starsHTML += '<i class="fa-solid fa-star-half-stroke text-primary"></i>';
     for (let i = 0; i < 5 - fullStars - (hasHalfStar ? 1 : 0); i++) starsHTML += '<i class="fa-regular fa-star text-primary"></i>';
     ratingContainer.innerHTML = `<div class="flex items-center gap-2"><span class="bg-primary/10 text-primary-dark font-bold px-3 py-1 rounded-md text-sm">Bintang ${fullStars}</span><div class="flex items-center text-xl">${starsHTML}</div></div>`;
 
-    document.getElementById('address-container').innerHTML = `
+    document.getElementById("address-container").innerHTML = `
         <p class="text-sm font-semibold text-slate-500 mb-1">Alamat</p>
         <p class="font-bold text-primary-dark">${hotel.lokasi}</p>
     `;
 
-    const mainImage = document.getElementById('main-image');
-    const thumbnailGrid = document.getElementById('thumbnail-grid');
+    const mainImage = document.getElementById("main-image");
+    const thumbnailGrid = document.getElementById("thumbnail-grid");
     mainImage.src = hotel.images[0];
     thumbnailGrid.innerHTML = hotel.images.map((imgSrc, index) => `
-        <img src="${imgSrc}" alt="Thumbnail ${index + 1}" class="w-full h-full object-cover rounded-md cursor-pointer border-4 border-transparent opacity-70 hover:opacity-100 transition-all aspect-video ${index === 0 ? 'thumbnail-active' : ''}" data-index="${index}">
-    `).join('');
+        <img src="${imgSrc}" alt="Thumbnail ${index + 1}" class="w-full h-full object-cover rounded-md cursor-pointer border-4 border-transparent opacity-70 hover:opacity-100 transition-all aspect-video ${index === 0 ? "thumbnail-active" : ""}" data-index="${index}">
+    `).join("");
 
-    thumbnailGrid.addEventListener('click', (e) => {
-        if (e.target.tagName === 'IMG') {
+    thumbnailGrid.addEventListener("click", e => {
+        if (e.target.tagName === "IMG") {
             const index = e.target.dataset.index;
             mainImage.src = hotel.images[index];
-            document.querySelectorAll('#thumbnail-grid img').forEach(t => t.classList.remove('thumbnail-active'));
-            e.target.classList.add('thumbnail-active');
+            document.querySelectorAll("#thumbnail-grid img").forEach(t => t.classList.remove("thumbnail-active"));
+            e.target.classList.add("thumbnail-active");
         }
     });
 
-    const miceContainer = document.getElementById('mice-accordion-container');
+    const miceContainer = document.getElementById("mice-accordion-container");
     if (hotel.mice && hotel.mice.length > 0) {
         miceContainer.innerHTML = hotel.mice.map(room => {
             const setupsHtml = room.setups.map(setup => `
@@ -115,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <img src="${setup.icon}" alt="${setup.type} layout" class="w-24 h-auto rounded-md bg-white p-1 shadow-sm">
                 </div>
-            `).join('');
+            `).join("");
             return `
                 <div class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
                     <button class="accordion-toggle w-full flex items-center justify-between p-5 text-left font-bold text-lg text-primary-dark">
@@ -127,26 +149,26 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-        }).join('');
+        }).join("");
 
-        document.querySelectorAll('.accordion-toggle').forEach(button => {
-            button.addEventListener('click', () => {
+        document.querySelectorAll(".accordion-toggle").forEach(button => {
+            button.addEventListener("click", () => {
                 const content = button.nextElementSibling;
-                const icon = button.querySelector('i');
-                content.classList.toggle('open');
-                icon.classList.toggle('rotate-180');
+                const icon = button.querySelector("i");
+                content.classList.toggle("open");
+                icon.classList.toggle("rotate-180");
             });
         });
     } else {
-        document.getElementById('mice-section').classList.add('hidden');
+        document.getElementById("mice-section").classList.add("hidden");
     }
 
-    document.getElementById('whatsapp-button').href = `https://wa.me/${hotel.phone}?text=Halo, saya tertarik untuk reservasi di ${hotel.name}.`;
-    document.getElementById('hotel-gmap-embed').src = hotel.gmapEmbed;
+    document.getElementById("whatsapp-button").href = `https://wa.me/${hotel.phone}?text=Halo, saya tertarik untuk reservasi di ${hotel.name}.`;
+    document.getElementById("hotel-gmap-embed").src = hotel.gmapEmbed;
 
     const pageUrl = window.location.href;
     const shareText = `Kunjungi ${hotel.name}, hotel keren di Sidoarjo!`;
-    document.getElementById('share-whatsapp').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + ' ' + pageUrl)}`;
-    document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
-    document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`;
+    document.getElementById("share-whatsapp").href = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText + " " + pageUrl)}`;
+    document.getElementById("share-facebook").href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+    document.getElementById("share-twitter").href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(shareText)}`;
 });
