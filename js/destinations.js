@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const destinations = [
         { id: 'kampung-batik-jetis', name: "Kampung Batik Jetis", category: "Budaya", 
-          image: "./assets/batik-jetis.jpg", rating: 4.5 },
+          image: "https://media.indozone.id/crop/photo/p2/95/2025/04/12/1000259473-634846500.jpg", rating: 4.5 },
         { id: 'candi-pari', name: "Candi Pari", category: "Sejarah", 
           image: "./assets/candi-pari.jpg", rating: 4.2 },
         { id: 'pulau-sarinah', name: "Pulau Sarinah (Pesisir Timur)", category: "Alam", 

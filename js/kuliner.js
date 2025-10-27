@@ -25,48 +25,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const kuliner = [
-        // --- DATA ASLI DARI detailKuliner.js (ID dan Gambar Lebih Spesifik) ---
         { id: 'pujasera-diponegoro', name: "Pujasera Diponegoro", category: "Rumah Makan", 
-          image: "https://i.ibb.co/L63Lp9Z/pujasera-diponegoro.jpg", rating: 4.1 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeHd0roSnXUMaxRsgjVW99mHUhNgeDMfOjCw&s", rating: 4.1 },
         { id: 'kupang-lontong-pak-sumali', name: "Kupang Lontong Pak Sumali", category: "Makanan", 
-          image: "https://cdn.popmama.com/content-images/post/20210614/lontong-kupang-9771e9a0b192579891310a477d5d1b0d.jpg", rating: 4.8 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOQvIqeoRJ9H8oXl0Svwj8WWGqqCaacrnB1g&s", rating: 4.8 },
         { id: 'rawon-gajah-mada', name: "Rawon Gajah Mada", category: "Makanan", 
-          image: "https://cdn.popmama.com/content-images/post/20210614/rawon-9771e9a0b192579891310a477d5d1b0d.jpg", rating: 4.7 },
+          image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/98/1d/44/ini-kiosnya.jpg?w=500&h=-1&s=1", rating: 4.7 },
         { id: 'tahu-campur-plaza-sidoarjo', name: "Tahu Campur Plaza Sidoarjo", category: "Makanan", 
-          image: "https://cdn.popmama.com/content-images/post/20210614/tahu-campur-9771e9a0b192579891310a477d5d1b0d.jpg", rating: 4.5 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdPF-V17aBxKdFB9sfADexExvQLnDYQMxmaA&s", rating: 4.5 },
         { id: 'warung-seafood-diponegoro', name: "Warung Seafood Diponegoro", category: "Makanan", 
-          image: "https://i.ibb.co/3sX8c6b/seafood.jpg", rating: 4.6 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaiX2LzgeLibvQSVKeQVU1_G0ZVrMEU4ZTMQ&s", rating: 4.6 },
         { id: 'warung-lontong-kupang-dan-lontong-balap', name: "Warung Lontong Kupang dan Lontong Balap", category: "Makanan", 
-          image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Lontong_Balap.jpg", rating: 4.4 },
+          image: "https://assets.promediateknologi.id/crop/0x0:0x0/x/photo/p2/85/2023/09/27/LK-pak-eko-626457546.jpg", rating: 4.4 },
         { id: 'warung-sate-komo-ibu-supi', name: "Warung Sate Komo Ibu Supi", category: "Makanan", 
-          image: "https://i.ibb.co/RzMny9P/sate-komo.jpg", rating: 4.8 },
+          image: "https://cdn.ngopibareng.id/uploads/2024/2024-05-14/sop-sate-komo-sidoarjo-dagingnya-ukuran-jumbo-bikin-ketagihan--thumbnail-947.webp", rating: 4.8 },
         { id: 'warung-kikil-legenda-abah-atim-watutulis', name: "Warung Kikil Legenda Abah Atim Watutulis", category: "Makanan", 
-          image: "https://i.ibb.co/w0Yd0yN/kikil.jpg", rating: 4.9 },
+          image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/684bd62f-fe66-4380-9c9a-c53b5d224c48_Go-Biz_20240701_081542.jpeg", rating: 4.9 },
         { id: 'warung-rujak-ulek-dan-cingur-ibu-ulfa', name: "Warung Rujak Ulek dan Cingur Ibu Ulfa", category: "Makanan", 
-          image: "https://cdn.popmama.com/content-images/post/20210614/rujak-cingur-9771e9a0b192579891310a477d5d1b0d.jpg", rating: 4.7 },
-        // --- 11 DATA DUMMY BARU KHUSUS SIDOARJO (Gambar lebih spesifik) ---
+          image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/4758d956-6baa-4a93-b651-ad1a75537594_Go-Biz_20221205_115653.jpeg", rating: 4.7 },
         { id: 'nasi-pecel-bunda-ida', name: "Nasi Pecel Bunda Ida", category: "Makanan", 
-          image: "https://upload.wikimedia.org/wikipedia/commons/1/1f/Pecel_Semanggi.JPG", rating: 4.3 },
+          image: "https://i0.wp.com/anakjajan.com/wp-content/uploads/2018/05/dscf1863.jpg?fit=1200%2C800&ssl=1", rating: 4.3 },
         { id: 'es-dawet-jabung-bu-dermi', name: "Es Dawet Jabung Bu Dermi", category: "Minuman", 
-          image: "https://i.ibb.co/R62pQ9k/dawet-jabung.jpg", rating: 4.5 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb-lc9IIZ5KXSSgc-Jb5FPLQ8C7cV1aIfE0g&s", rating: 4.5 },
         { id: 'toko-roti-sari-rasa', name: "Toko Roti Sari Rasa", category: "Toko Roti", 
-          image: "https://i.ibb.co/87xK40Y/roti-jadul.jpg", rating: 4.0 },
+          image: "https://i0.wp.com/betanews.id/wp-content/uploads/2021/09/20210903_BETA_Roti_03.jpg?fit=600%2C400&ssl=1", rating: 4.0 },
         { id: 'warung-sambal-pencit-cak-mad', name: "Warung Sambal Pencit Cak Mad", category: "Makanan", 
-          image: "https://i.ibb.co/j3d692p/sambal-pencit.jpg", rating: 4.6 },
+          image: "https://asset-2.tribunnews.com/suryamalang/foto/bank/images/sensasi-menikmati-sambelan-ala-surabaya.jpg", rating: 4.6 },
         { id: 'mie-goreng-jawa-pak-rt', name: "Mie Goreng Jawa Pak RT", category: "Makanan", 
-          image: "https://i.ibb.co/L5rK5Q5/mie-goreng-jawa.jpg", rating: 4.2 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtD-CabXcReo03cGq1usyVDPp1cb43E7uVCQ&s", rating: 4.2 },
         { id: 'soto-ayam-pak-ali', name: "Soto Ayam Pak Ali", category: "Makanan", 
-          image: "https://img.inews.co.id/media/822/files/inews_new/2020/12/10/soto.jpg", rating: 3.9 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCOm2Z8TApu8OKQAWGEv6GE_Q5WE1765PIhA&s", rating: 3.9 },
         { id: 'kopi-tepi-sawah', name: "Kopi Tepi Sawah", category: "Kopi", 
-          image: "https://i.ibb.co/p30Wd3V/kopi-sawah.jpg", rating: 4.4 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNhQDsk8C66IKVLIt8OhnDjIqFGmsmDaWZ9A&s", rating: 4.4 },
         { id: 'sate-ayam-madura-cak-no', name: "Sate Ayam Madura Cak No", category: "Makanan", 
-          image: "https://www.surabayatravel.com/wp-content/uploads/2019/09/Bakso-Lapangan-Tembak.jpg", rating: 4.1 },
+          image: "https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/cad752f7-2eb6-4f89-bda1-c3d7ff00c565_Go-Biz_20211123_162250.jpeg", rating: 4.1 },
         { id: 'depot-soto-daging-bu-tin', name: "Depot Soto Daging Bu Tin", category: "Makanan", 
-          image: "https://i.ibb.co/Vq2p19p/soto-daging.jpg", rating: 4.7 },
+          image: "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/3cfa407f-19a4-4023-b1db-a293238ad3b7_Go-Biz_20220809_072533.jpeg", rating: 4.7 },
         { id: 'warung-es-campur-pak-de', name: "Warung Es Campur Pak De", category: "Minuman", 
-          image: "https://i.ibb.co/D8gV9pM/es-campur.jpg", rating: 4.6 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi1QO5bXdybpIkEXpzE6yIn7MT0wsIh7auwg&s", rating: 4.6 },
         { id: 'kedai-susu-murni-mak-nyuss', name: "Kedai Susu Murni Mak Nyuss", category: "Minuman", 
-          image: "https://i.ibb.co/9q09Z4z/susu-murni.jpg", rating: 4.5 },
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZX83Pi6UXbZt3RiuhFqhAHcIMs6thnPIrHQ&s", rating: 4.5 },
     ];
 
     let currentPage = 1;
@@ -118,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const displayName = categoryName === 'All' ? 'Semua Kategori' : categoryName;
         button.textContent = displayName;
         button.dataset.category = categoryName;
-        button.className = `w-full text-left px-4 py-2 rounded-md transition-colors text-slate-700 hover:bg-slate-100 hover:text-primary ${isSelected ? 'bg-blue-50 text-primary-dark font-semibold' : ''}`;
+        button.className = `w-full text-left px-4 py-2 rounded-md transition-colors text-slate-700 ${isSelected ? 'bg-blue-50 text-primary-dark font-semibold' : ''}`;
         
         button.addEventListener('click', () => {
             selectedCategory = button.dataset.category;
@@ -166,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <h3 class="text-3xl font-bold mb-3 text-slate-700">Oops! Tidak ada hasil ditemukan</h3>
                     <p class="text-lg text-slate-500 mb-6">Coba gunakan kata kunci atau filter kategori yang berbeda.</p>
-                    <button id="reset-search-btn" class="bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 rounded-xl transition-all">
+                    <button id="reset-search-btn" class="bg-primary text-white font-semibold px-6 py-3 rounded-xl transition-all">
                         Reset Pencarian
                     </button>
                 </div>`;
@@ -196,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             return `
-            <a href="detailKuliner.html?id=${item.id}" class="block card-hover" style="animation-delay: ${index * 0.05}s;">
+            <a href="detailKuliner.html?id=${item.id}" class="block" style="animation-delay: ${index * 0.05}s;">
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 h-full border-4 border-white">
                     <div class="relative h-48 overflow-hidden">
                         <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500">
@@ -216,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="text-slate-600 text-xs font-semibold ml-1">${item.rating}</span>
                             </div>
                             <span class="text-primary-dark font-semibold text-sm group">
-                                <span class="group-hover:mr-2 transition-all">Lihat Detail</span>
+                                <span class="">Lihat Detail</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </span>
                         </div>
@@ -228,14 +226,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let paginationHTML = '';
         if (totalPages > 1) {
             paginationHTML += `
-                <button data-page="${currentPage - 1}" class="pagination-arrow h-11 w-11 rounded-xl bg-white hover:bg-slate-100 transition-all shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed font-bold text-slate-700" ${currentPage === 1 ? 'disabled' : ''}>
+                <button data-page="${currentPage - 1}" class="pagination-arrow h-11 w-11 rounded-xl bg-white transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed font-bold text-slate-700" ${currentPage === 1 ? 'disabled' : ''}>
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>`;
             
             for (let i = 1; i <= totalPages; i++) {
                 if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
                     paginationHTML += `
-                        <button data-page="${i}" class="pagination-button h-11 w-11 rounded-xl font-bold transition-all shadow-md hover:shadow-lg ${i === currentPage ? 'bg-primary text-white scale-110' : 'bg-white text-slate-700 hover:bg-slate-100'}">
+                        <button data-page="${i}" class="pagination-button h-11 w-11 rounded-xl font-bold transition-all shadow-md  ${i === currentPage ? 'bg-primary text-white scale-110' : 'bg-white text-slate-700'}">
                             ${i}
                         </button>`;
                 } else if (i === currentPage - 2 || i === currentPage + 2) {

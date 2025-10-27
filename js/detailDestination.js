@@ -29,20 +29,19 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Budaya",
             phone: 'tel:+6281330073826',
             images: [
-                "https://i.ibb.co/6P0Jm9B/batik-jetis.jpg",
-                "https://i.ibb.co/3WqP49g/batik-jetis-2.jpg",
-                "https://i.ibb.co/q7X06XJ/batik-jetis-3.jpg",
-                "https://i.ibb.co/5cQ3S2t/batik-jetis-4.jpg"
+                "https://media.indozone.id/crop/photo/p2/95/2025/04/12/1000259473-634846500.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4rhI19twy2vM4RZhK7j3cuEV3y1oYnHUjKg&s",
+                "https://cdn.ngopibareng.id/uploads/2023/2023-09-03/kampung-batik-jetis-destinasi-umkm-lokal-di-gelaran-porprov--01",
             ],
             contentBlocks: [
                 { type: 'text', content: 'Kampung Batik Jetis adalah sentra kerajinan batik tulis khas Sidoarjo yang sudah ada sejak tahun 1675. Kampung ini menjadi tujuan wisata edukasi bagi Anda yang ingin melihat langsung proses pembuatan batik, mulai dari mencanting, pewarnaan, hingga pelorodan.' },
-                { type: 'image', images: ['https://i.ibb.co/5cQ3S2t/batik-jetis-4.jpg'] },
+                { type: 'image', images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxPJa01J73lqTiaqTl4M43PEoshXouilfUsA&s', 'https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/850/2023/09/04/Kampung-batik-tulis-sidoarjo-1957907684.jpeg'] },
                 { type: 'text', content: 'Ciri khas Batik Sidoarjo, khususnya dari Jetis, adalah motifnya yang kental dengan nuansa pesisir dan flora, seperti motif Ikan Bandeng, Udang, dan Mangrove. Tempat ini juga merupakan pusat UMKM di mana pengunjung dapat berbelanja batik tulis, cap, dan kombinasi dengan harga yang bervariasi.' },
                 { type: 'text', content: 'Pengunjung seringkali diberikan kesempatan untuk mencoba membatik langsung di beberapa galeri. Ini adalah pengalaman imersif yang sempurna untuk memahami warisan budaya Jawa Timur.' }
             ],
             ticket: 0,
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.172449553738!2d112.71690037466827!3d-7.341857692658828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e4726e6d3065%3A0x7d8389c09939a3f!2sKampung%20Batik%20Tulis%20Jetis!5e0!3m2!1sid!2sid!4v1719597792683!5m2!1sid!2sid",
-            address: "Jalan P. Diponegoro, Lemah Putro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur.",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.077421521109!2d112.71170707592805!3d-7.456687273495069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e1333afd2ef1%3A0x977f519df88e7c23!2sKampoeng%20Batik%20Jetis!5e0!3m2!1sid!2sid!4v1761553946696!5m2!1sid!2sid",
+            address: "Jalan P. Diponegoro, Lemah Putro, Lemahputro, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur",
             openingHours: [
                 { day: "Setiap Hari", time: "09:00 - 20:00" }
             ]
@@ -52,19 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Sejarah",
             phone: "tel:+623134171552",
             images: [
-                "https://i.ibb.co/F8W2Zg3/candi-pari.jpg",
-                "https://i.ibb.co/5xk5w6t/candi-pari-2.jpg",
-                "https://i.ibb.co/gST0f3j/candi-pari-3.jpg",
-                "https://i.ibb.co/TmgvC7w/candi-pari-4.jpg"
+                "https://www.tempatwisata.pro/users_media/3092/Candi%20Pari.jpg",
+                "https://awsimages.detik.net.id/community/media/visual/2022/04/04/candi-pari_169.jpeg?w=1200",
             ],
             contentBlocks: [
                 { type: 'text', content: 'Candi Pari adalah peninggalan masa Klasik Indonesia yang terletak di Desa Candipari, Kecamatan Porong, Sidoarjo. Candi bercorak Hindu ini diperkirakan dibangun pada masa Majapahit, yaitu tahun 1370 M, di era pemerintahan Raja Hayam Wuruk. Candi ini memiliki keunikan arsitektur yang dipengaruhi oleh budaya Campa (Vietnam Selatan).' },
-                { type: 'image', images: ['https://i.ibb.co/gST0f3j/candi-pari-3.jpg', 'https://i.ibb.co/TmgvC7w/candi-pari-4.jpg'] },
+                { type: 'image', images: ['https://etnis.id/content/images/2020/07/2.-Candi-Sumur.jpg'] },
                 { type: 'text', content: 'Candi ini terbuat dari bata merah dengan bentuk persegi empat. Legenda lokal mengisahkan bahwa candi ini dibangun sebagai tempat peristirahatan seorang pangeran dari Campa yang menikah dengan penduduk setempat. Keindahan candi ini menjadikannya spot fotografi yang menarik bagi pecinta sejarah dan arsitektur kuno.' }
             ],
             ticket: 3000,
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.897451996238!2d112.72146317467005!3d-7.575087592440317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ec89292e09b5%3A0x286300408544d650!2sCandi%20Pari!5e0!3m2!1sid!2sid!4v1719597950570!5m2!1sid!2sid",
-            address: "Candipari, Jl. Purbakala, Candipari Wetan, Candipari, Kec. Porong, Kabupaten Sidoarjo, Jawa Timur.",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.537924101874!2d112.68086177592882!3d-7.516149874162465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7de2693125185%3A0xe503721c13193a60!2sCandi%20Pari!5e0!3m2!1sid!2sid!4v1761554014923!5m2!1sid!2sid",
+            address: "Candipari, Jl. Purbakala, Candipari Wetan, Candipari, Kec. Porong, Kabupaten Sidoarjo, Jawa Timur",
             openingHours: [
                 { day: "Senin - Jumat", time: "08:00 - 16:00" },
                 { day: "Sabtu - Minggu", time: "07:00 - 17:00" }
@@ -75,18 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Alam",
             phone: "tel:+62318921946",
             images: [
-                "https://i.ibb.co/680D1Jc/pulau-sarinah.jpg",
-                "https://i.ibb.co/L5hS5b9/pulau-sarinah-2.jpg",
-                "https://i.ibb.co/1n5X48k/pulau-sarinah-3.jpg",
-                "https://i.ibb.co/6Fh80R8/pulau-sarinah-4.jpg"
+                "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/200/2025/01/28/WhatsApp-Image-2025-01-28-at-153006-2317154963.jpeg",
+                "https://sidita.disbudpar.jatimprov.go.id/storage/foto-dtw/d3ca2_1670487091.jpg",
             ],
             contentBlocks: [
-                { type: 'text', content: 'Pulau Sarinah, atau yang sekarang lebih dikenal sebagai **Pulau Lusi** (Lumpur Sidoarjo), adalah pulau buatan yang terbentuk dari endapan lumpur Lapindo di tengah perairan Muara Sungai Porong. Dulunya gersang, pulau seluas sekitar 93,4 hektare ini kini telah ditanami **hutan mangrove** dan menjadi destinasi wisata alam dan penelitian.' },
-                { type: 'image', images: ['https://i.ibb.co/6Fh80R8/pulau-sarinah-4.jpg'] },
-                { type: 'text', content: 'Untuk mencapai pulau ini, pengunjung harus menyewa perahu dari **Dermaga Tlocor**. Di pulau ini, Anda dapat menikmati pemandangan alam, mengamati burung, dan berfoto di kawasan hutan mangrove yang eksotis, menjadikannya bukti unik adaptasi lingkungan.' }
+                { type: 'text', content: 'Pulau Sarinah, atau yang sekarang lebih dikenal sebagai **Pulau Lusi** (Lumpur Sidoarjo), adalah pulau buatan yang terbentuk dari endapan lumpur Lapindo di tengah perairan Muara Sungai Porong. Dulunya gersang, pulau seluas sekitar 93,4 hektare ini kini telah ditanami **hutan mangrove** dan menjadi destinasi wisata alam dan penelitian. Untuk mencapai pulau ini, pengunjung harus menyewa perahu dari **Dermaga Tlocor**. Di pulau ini, Anda dapat menikmati pemandangan alam, mengamati burung, dan berfoto di kawasan hutan mangrove yang eksotis, menjadikannya bukti unik adaptasi lingkungan.' },
             ],
             ticket: 5000, // Biaya masuk dermaga, belum termasuk sewa perahu
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1517452655077!2d112.87113117466986!3d-7.551079892461875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e7428f731c3b%3A0xc665191542f7c223!2sPulau%20Lusi!5e0!3m2!1sid!2sid!4v1719598048601!5m2!1sid!2sid",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.048763506511!2d112.87090087592948!3d-7.569662974767992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7c39f454e9da5%3A0xc7761f4a577c76e7!2sPulau%20Sarinah!5e0!3m2!1sid!2sid!4v1761554216826!5m2!1sid!2sid",
             address: "CVJF+49Q, Unnamed Road, Tanjungsari, Kupang, Jabon, Kabupaten Sidoarjo, Jawa Timur.",
             openingHours: [
                 { day: "Setiap Hari", time: "07:00 - 16:00" }

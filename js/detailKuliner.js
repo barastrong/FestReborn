@@ -25,21 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const kulinerData = {
-        // --- DATA ASLI DARI PERMINTAAN AWAL (Gambar Lebih Spesifik) ---
         'pujasera-diponegoro': {
             name: "Pujasera Diponegoro",
             category: "Rumah Makan",
             phone: "tel:081333313423",
             images: [
-                "https://i.ibb.co/L63Lp9Z/pujasera-diponegoro.jpg", // Gambar Pujasera
-                "https://i.ibb.co/f8L02q0/pujasera-detail-1.jpg", 
-                "https://i.ibb.co/4T683j0/pujasera-detail-2.jpg", 
+                "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/100/2024/02/01/01-ft-pujasera-lantai-1-kosong-2-2910529258.jpg", // Gambar Pujasera
+                "https://i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/aac1cb9e-5eb5-46a5-9a89-0a7fd4a4ae7d_Go-Biz_20210928_204049.jpeg", 
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIQiQks7ESdVn2171tX9gBQqD73PtsLOv2Ew&s", 
             ],
             contentBlocks: [
                 { type: 'text', content: "Pujasera Diponegoro adalah pusat kuliner yang menyediakan berbagai macam makanan khas Sidoarjo dan Indonesia. Tempat ini dikenal dengan suasana yang ramai dan variasi hidangan yang lengkap." },
                 { type: 'text', content: "Anda bisa menemukan hidangan mulai dari nasi goreng, mie, hingga berbagai macam lauk-pauk. Sangat cocok untuk makan malam bersama keluarga atau teman." },
             ],
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2483584852934!2d112.72304627401768!3d-7.327598892676779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e48b9415668b%3A0x6a2c332768565251!2sPujasera%20Diponegoro!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.117846682002!2d112.712328075928!3d-7.4522126734451275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e1eae10acb21%3A0x1bfb6b581426b16a!2sPujasera%20Diponegoro!5e0!3m2!1sid!2sid!4v1761564885220!5m2!1sid!2sid",
             address: "Jl. Diponegoro No.8e, RT.28/RW.06, Rw5, Sidokumpul, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur.",
             openingHours: [
                 { day: "Senin - Jumat", time: "09:00 - 19:00" },
@@ -51,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Makanan",
             phone: "tel:081234567890",
             images: [
-                "https://cdn.popmama.com/content-images/post/20210614/lontong-kupang-9771e9a0b192579891310a477d5d1b0d.jpg",
-                "https://i.ibb.co/q1V6K6p/sate-kerang.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNMnXhr8jRzyfAQe6t5LI5j5NW6qoVgVIUXg&s",
+                "https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/65ef8980-1807-4f25-8f7e-f86835122d5e_Go-Biz_20220108_103918.jpeg",
             ],
             contentBlocks: [
                 { type: 'text', content: "Kupang Lontong Pak Sumali adalah salah satu warung kupang lontong legendaris di Sidoarjo. Kuah petis yang khas dan gurih menjadikan hidangan ini favorit banyak orang." },
                 { type: 'text', content: "Jangan lupa tambahkan sate kerang untuk melengkapi kenikmatannya!" },
             ],
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2483584852934!2d112.72304627401768!3d-7.327598892676779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e48c1e4c965f%3A0x1d35a823f66c91a!2sKupang%20Lontong%20Pak%20Sumali!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.5699078597786!2d112.72415287097908!3d-7.401991492608013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e50031afba59%3A0x3dc4a452312a7372!2sKUPANG%20LONTONG%20PAK%20SUMALI%20(Depot%20Sumber%20Rejeki)!5e0!3m2!1sid!2sid!4v1761565130046!5m2!1sid!2sid",
             address: "Jl. Raya Tebel, Tebel Tengah, Tebel, Kec. Gedangan, Kabupaten Sidoarjo, Jawa Timur.",
             openingHours: [
                 { day: "Senin - Jumat", time: "09:00 - 19:00" },
@@ -70,13 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Makanan",
             phone: "tel:081555543210",
             images: [
-                "https://cdn.popmama.com/content-images/post/20210614/rawon-9771e9a0b192579891310a477d5d1b0d.jpg",
-                "https://i.ibb.co/3k5fH8h/rawon-detail.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFVoqLISEUHVkjfLikPUcjU5dGYtzlLXA7cA&s",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK6hOssRb8ztITQOGWnpqywL3TaNF1F9-vwQ&s",
             ],
             contentBlocks: [
                 { type: 'text', content: "Rawon Gajah Mada terkenal dengan kuah kluweknya yang pekat dan daging sapi yang empuk. Warung ini telah menjadi ikon kuliner malam di Sidoarjo selama bertahun-tahun." },
             ],
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2483584852934!2d112.72304627401768!3d-7.327598892676779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e487d55f9e9d%3A0x889c894c25f778d9!2sRawon%20Gajah%20Mada!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126610.23922706663!2d112.64432174299338!3d-7.401983914298509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e6cc92026333%3A0x5b1e2d9c7bdcc527!2sRawon%20Gajah%20Mada!5e0!3m2!1sid!2sid!4v1761565297071!5m2!1sid!2sid",
             address: "Jl. Gajah Mada, Pekauman, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur.",
             openingHours: [
                 { day: "Senin - Jumat", time: "11:40 - 03:00" },
@@ -88,13 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
             category: "Makanan",
             phone: "tel:082131488107",
             images: [
-                "https://cdn.popmama.com/content-images/post/20210614/tahu-campur-9771e9a0b192579891310a477d5d1b0d.jpg",
-                "https://i.ibb.co/qFmJ0jT/tahu-campur-detail.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdPF-V17aBxKdFB9sfADexExvQLnDYQMxmaA&s",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG4do66YAqvrGumuyj_S4Bt8I66GuFFfDQtw&s",
             ],
             contentBlocks: [
                 { type: 'text', content: "Tahu Campur ini menyajikan kombinasi tahu goreng, lontong, tauge, selada air, mie kuning, perkedel singkong, dan bumbu petis yang kaya rasa. Porsinya yang pas membuat kenyang!" },
             ],
-            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.2483584852934!2d112.72304627401768!3d-7.327598892676779!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e48b89e5a5f9%3A0x6c813580e227d88!2sTahu%20Campur%20Plaza%20Sidoarjo!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid",
+            gmapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.126531706055!2d112.71436047098!3d-7.451250992559924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e6caeb933a47%3A0x600d2294118499c8!2sTahu%20Campur%20Dan%20Bakso%20Plaza%20Sidoarjo!5e0!3m2!1sid!2sid!4v1761565404645!5m2!1sid!2sid",
             address: "Jl. Thamrin No.2, Rw4, Sidokumpul, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur.",
             openingHours: [
                 { day: "Senin - Jumat", time: "16:30 - 22:30" },
