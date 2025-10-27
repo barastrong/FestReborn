@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Hotel modern strategis, ideal untuk bisnis dan liburan. Dekat dengan Stadion Gelora Delta dan pusat kuliner.",
         },
         { 
-            id: "hotel-neo-waru-sidoarjo",
+            id: "hotel-neo+-waru-sidoarjo",
             name: "Hotel Neo+ Waru - Sidoarjo", 
             lokasi: "Jl. Jenderal S. Parman No.52 - 54, Waru, Sidoarjo", 
             rating: 4.7, 

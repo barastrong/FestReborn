@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         {
-            id: "hotel-neo-waru-sidoarjo",
+            id: "hotel-neo+-waru-sidoarjo",
             name: "Hotel Neo+ Waru - Sidoarjo",
             lokasi: "Jl. Jenderal S. Parman No.52 - 54, Krajan Kulon, Waru, Kec. Waru, Kabupaten Sidoarjo, Jawa Timur 61256",
             rating: 4.7,
