@@ -24,19 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOverlay.addEventListener('click', closeMenu);
     }
     
-    const transportationData = [
+   const transportationData = [
         {
-            id: 'trans-sidoarjo',
-            name: 'Trans Sidoarjo (Bus)',
+            id: 'trans-jatim',
+            name: 'Trans Jatim (Bus)',
             category: ['terminal', 'stasiun'],
-            image: 'https://placehold.co/800x500/134686/FFFFFF/png?text=Trans+Sidoarjo',
+            image: 'https://assets.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/jawapos/2022/08/bus-trans-jatim.jpg',
             description: 'Layanan bus rapid transit (BRT) andalan yang menghubungkan titik-titik vital di Sidoarjo dan sekitarnya. Nyaman, ber-AC, dan memiliki jadwal yang teratur.',
             routes: [
                 'Koridor 1: Terminal Purabaya - Terminal Larangan - Pusat Kota.',
                 'Koridor 2: Porong - Candi - Sidoarjo Kota.',
             ],
             app: {
-                name: 'Sidoarjo KITA',
+                name: 'TransJatim',
                 logo: 'https://placehold.co/100x100/eeeeee/333333/png?text=App',
                 appStoreUrl: '#',
                 googlePlayUrl: '#',
@@ -47,9 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 'angkutan-kota',
-            name: 'Angkutan Kota (Lyn)',
+            name: 'Angkutan Kota',
             category: ['terminal', 'stasiun'],
-            image: 'https://placehold.co/800x500/F5AD18/333333/png?text=Angkutan+Kota',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMX7S70yb-MyF9B62SiTPFhaKx-u0l8cGpJA&s',
             description: 'Transportasi fleksibel dengan rute yang menjangkau hingga ke area perumahan dan jalan-jalan sekunder. Pilihan ekonomis untuk perjalanan jarak pendek.',
             routes: [
                 'Rute H: Sidoarjo - Krian.',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'damri-bandara',
             name: 'Bus DAMRI Bandara',
             category: ['bandara', 'terminal'],
-            image: 'https://placehold.co/800x500/4a5568/FFFFFF/png?text=Bus+DAMRI',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-lP0vkDGNBLqGj9i8Ed3O0SIlN-p7eg89Zw&s',
             description: 'Solusi transportasi langsung dari dan menuju Bandara Internasional Juanda. Bus eksekutif yang nyaman dengan ruang bagasi yang luas.',
             routes: [
                 'Rute Utama: Bandara Juanda T1 & T2 - Terminal Purabaya (Bungurasih).',
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'commuter-line',
             name: 'Commuter Line (Kereta Api)',
             category: ['stasiun'],
-            image: 'https://placehold.co/800x500/d53f8c/FFFFFF/png?text=Commuter+Line',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrOf3zZM2PYX07k0X_eMu7vM4j39Q3pTnxew&s',
             description: 'Layanan kereta api komuter yang menghubungkan Sidoarjo dengan kota-kota sekitarnya seperti Surabaya, Mojokerto, dan Pasuruan. Cepat dan bebas macet.',
             routes: [
                 'Relasi: Surabaya Kota - Sidoarjo - Bangil - Pasuruan.',
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 instagramUrl: '#',
             }
         },
-    ];
+    ]; 
 
     const listContainer = document.getElementById('transportation-list');
     const filterButtons = document.querySelectorAll('.filter-btn');

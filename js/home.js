@@ -10,153 +10,180 @@
                 { name: "Wisata Bahari Tlocor", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbKR92TorlzRqHkpvK1haDTo_xWsy-VSbZQw&s" },
             ];
 
-            const tourPackages = [
-                {
-                    id: 'hemat',
-                    name: 'Jelajah Hemat',
-                    image:'./assets/Logo.png',
-                    normalPrice: '350.000',
-                    price: '250',
-                    priceSuffix: '.000',
-                    features: [
-                        { text: '2 Destinasi Wisata', included: true },
-                        { text: 'Transportasi Motor', included: true },
-                        { text: 'Makan Siang Khas', included: true },
-                        { text: 'Dokumentasi Foto', included: false },
-                        { text: 'Pemandu Wisata', included: false }
-                    ]
-                },
-                {
-                    id: 'populer',
-                    name: 'Petualang Populer',
-                    normalPrice: '600.000',
-                    price: '450',
-                    priceSuffix: '.000',
-                    features: [
-                        { text: '4 Destinasi Wisata', included: true },
-                        { text: 'Transportasi Mobil (AC)', included: true },
-                        { text: 'Makan Siang & Snack', included: true },
-                        { text: 'Dokumentasi Foto', included: true },
-                        { text: 'Pemandu Wisata', included: false }
-                    ]
-                },
-                {
-                    id: 'grup',
-                    name: 'Grup Seru',
-                    normalPrice: '800.000',
-                    price: '650',
-                    priceSuffix: '.000',
-                    features: [
-                        { text: '5 Destinasi Wisata', included: true },
-                        { text: 'Transportasi Mini Bus', included: true },
-                        { text: 'Makan & Snack 2x', included: true },
-                        { text: 'Dokumentasi Foto', included: true },
-                        { text: 'Pemandu Wisata', included: true }
-                    ]
-                },
-                {
-                    id: 'sultan',
-                    name: 'Sultan Sidoarjo',
-                    normalPrice: '1.250.000',
-                    price: '950',
-                    priceSuffix: '.000',
-                    features: [
-                        { text: 'Destinasi Pilihan', included: true },
-                        { text: 'Mobil Pribadi + Driver', included: true },
-                        { text: 'Makan di Resto Premium', included: true },
-                        { text: 'Dokumentasi Foto & Video', included: true },
-                        { text: 'Pemandu Profesional', included: true }
-                    ]
-                }
-            ];
+        const tourPackages = [
 
-            const testimonials = [
-                {
-                    avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d',
-                    name: 'Ratni Permata Dwi',
-                    origin: 'Wisatawan dari Jakarta',
-                    quote: '"Perjalanan yang luar biasa! Paketnya sangat terorganisir, pemandunya ramah, dan makanannya enak-enak. Sidoarjo ternyata punya banyak hal menarik!"'
-                },
-                {
-                    avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026705d',
-                    name: 'Rina Sugiarti Erik',
-                    origin: 'Wisatawan dari Bandung',
-                    quote: '"Saya ambil paket Grup Seru bareng teman-teman kantor. Semuanya happy! Transportasinya nyaman dan destinasinya seru semua. Recommended banget!"'
-                },
-                {
-                    avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026706d',
-                    name: 'Siti Pratama Astuti',
-                    origin: 'Wisatawan dari Yogyakarta',
-                    quote: '"Sebagai solo traveler, saya merasa aman dan nyaman. Bisa keliling Sidoarjo tanpa pusing mikirin rute. Kulinernya juara!"'
-                }
-            ];
+            {
+                id: 'hemat',
+                name: 'Dolan 1',
+                price: '100',
+                priceSuffix: '.000*',
+                features: [
+                    { text: '4 Destinasi Utama dalam Sehari', included: true },
+                    { text: 'Rekomendasi Rute Mandiri (Kendaraan Roda Dua)', included: true }, 
+                    { text: 'Panduan Waktu Makan Siang Khas Sidoarjo', included: true },
+                    { text: 'Estimasi Anggaran Perorangan Rendah', included: true },
+                ]
+            },
+            {
+                id: 'populer',
+                name: 'Dolan 2',
+                price: '450',
+                priceSuffix: '.000*',
+                features: [
+                    { text: '5 Destinasi (Alam, Budaya, Edukasi)', included: true },
+                    { text: 'Rekomendasi Rute Nyaman (Kendaraan Roda Empat)', included: true },
+                    { text: 'Panduan Anggaran Makan Siang & Snack', included: true },
+                    { text: 'Panduan Sewa Perahu dan Spot Foto', included: true }, 
+                    { text: 'Panduan Rekomendasi Akomodasi (1 Malam)', included: true } 
+                ]
+            },
+            {
+                id: 'grup',
+                name: 'Dolan 3',
+                price: '650',
+                priceSuffix: '.000*',
+                features: [
+                    { text: '7 Destinasi (Sejarah, Alam, Rekreasi)', included: true }, 
+                    { text: 'Rekomendasi Kendaraan Kapasitas Besar', included: true }, 
+                    { text: 'Panduan Kuliner Lengkap (Siang & Malam)', included: true }, 
+                    { text: 'Rencana Perjalanan Detail & Terstruktur', included: true }, 
+                    { text: 'Rekomendasi Kontak Pemandu Lokal (Opsional)', included: true } 
+                ]
+            },
+            {
+                id: 'sultan',
+                name: 'Dolan 4',
+                price: '950',
+                priceSuffix: '.000*',
+                features: [
+                    { text: '8+ Destinasi Pilihan Fleksibel', included: true },
+                    { text: 'Rekomendasi Mobil Pribadi Eksklusif', included: true }, 
+                    { text: 'Panduan Restoran & Fasilitas Premium', included: true }, 
+                    { text: 'Panduan Layanan Foto & Video Profesional', included: true }, 
+                    { text: 'Panduan Akomodasi Bintang 4/5', included: true } 
+                ]
+            }
+        ];
 
-            const packageDetails = {
-                hemat: {
-                    name: 'Jelajah Hemat',
-                    price: 'Rp 250.000',
-                    image: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&h=500&fit=crop',
-                    gradient: 'from-blue-500 to-cyan-500',
-                    duration: '1 Hari Penuh',
-                    features: [
-                        { text: '2 Destinasi Wisata', included: true }, { text: 'Transportasi Motor', included: true }, { text: 'Makan Siang Khas', included: true }, { text: 'Dokumentasi Foto', included: false }, { text: 'Pemandu Wisata', included: false }
-                    ],
-                    itinerary: [
-                        { time: "09:00 - 11:00", destination: "Candi Pari", description: "Mengagumi arsitektur kuno peninggalan Majapahit.", price: "Rp. 15.000" },
-                        { time: "12:00 - 13:00", destination: "Makan Siang Lontong Kupang", description: "Menikmati kuliner khas Sidoarjo yang legendaris." },
-                        { time: "14:00 - 16:00", destination: "Alun-alun Sidoarjo", description: "Bersantai dan berfoto di Monumen Jayandaru." }
-                    ]
-                },
-                populer: {
-                    name: 'Petualang Populer',
-                    price: 'Rp 450.000',
-                    image: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=500&fit=crop',
-                    gradient: 'from-purple-500 to-pink-500',
-                    duration: '1 Hari Penuh',
-                    features: [
-                        { text: '4 Destinasi Wisata', included: true }, { text: 'Transportasi Mobil (AC)', included: true }, { text: 'Makan Siang & Snack', included: true }, { text: 'Dokumentasi Foto', included: true }, { text: 'Pemandu Wisata', included: false }
-                    ],
-                    itinerary: [
-                        { time: "08:00 - 10:00", destination: "Lumpur Lapindo", description: "Menyaksikan fenomena alam yang unik dari dekat." },
-                        { time: "10:30 - 12:30", destination: "Museum Mpu Tantular", description: "Menyelami sejarah dan budaya Jawa Timur." },
-                        { time: "13:00 - 14:00", destination: "Makan Siang & Snack", description: "Mencicipi hidangan lokal dan jajanan khas." },
-                        { time: "14:30 - 16:30", destination: "Desa Kerajinan Kulit", description: "Melihat proses pembuatan dan belanja produk kulit." }
-                    ]
-                },
-                grup: {
-                    name: 'Grup Seru',
-                    price: 'Rp 650.000',
-                    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop',
-                    gradient: 'from-green-500 to-teal-500',
-                    duration: '2 Hari 1 Malam',
-                    features: [
-                        { text: '5 Destinasi Wisata', included: true }, { text: 'Transportasi Mini Bus', included: true }, { text: 'Makan & Snack 2x', included: true }, { text: 'Dokumentasi Foto', included: true }, { text: 'Pemandu Wisata', included: true }
-                    ],
-                    itinerary: [
-                        { time: "Hari 1 - 09:00", destination: "Candi Pari & Candi Sumur", description: "Eksplorasi candi kembar era Majapahit." },
-                        { time: "Hari 1 - 13:00", destination: "Wisata Bahari Tlocor", description: "Menikmati suasana pantai dan hutan mangrove." },
-                        { time: "Hari 1 - 18:00", destination: "Makan Malam Seafood", description: "Menyantap hidangan laut segar di tepi pantai." },
-                        { time: "Hari 2 - 09:00", destination: "Kampung Batik Jetis", description: "Workshop membatik dan belanja oleh-oleh." },
-                        { time: "Hari 2 - 13:00", destination: "Pusat Oleh-oleh", description: "Berburu bandeng, udang, dan petis khas Sidoarjo." }
-                    ]
-                },
-                sultan: {
-                    name: 'Sultan Sidoarjo',
-                    price: 'Rp 950.000',
-                    image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=500&fit=crop',
-                    gradient: 'from-orange-500 to-red-500',
-                    duration: 'Fleksibel Sesuai Keinginan',
-                    features: [
-                        { text: 'Destinasi Pilihan', included: true }, { text: 'Mobil Pribadi + Driver', included: true }, { text: 'Makan di Resto Premium', included: true }, { text: 'Dokumentasi Foto & Video', included: true }, { text: 'Pemandu Profesional', included: true }
-                    ],
-                    itinerary: [
-                        { time: "Sesuai Pilihan", destination: "Tur Privat ke Candi-Candi", description: "Jelajahi Candi Pari, Sumur, dan lainnya." },
-                        { time: "Sesuai Pilihan", destination: "Makan di Resto Premium", description: "Nikmati santapan istimewa di restoran apung." },
-                        { time: "Sesuai Pilihan", destination: "Kunjungan Eksklusif & Workshop", description: "Kunjungi pusat kerajinan kulit atau batik." },
-                        { time: "Sesuai Pilihan", destination: "Sesi Foto Profesional", description: "Abadikan momen dengan fotografer profesional." }
-                    ]
-                }
-            };
+        const testimonials = [
+            {
+                avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026704d',
+                name: 'Ratni Permata Dwi',
+                origin: 'Wisatawan dari Jakarta',
+                quote: '"Informasi rencana perjalanan yang luar biasa! Rutenya terorganisir, destinasinya mudah diakses, dan panduan kulinernya sangat membantu. Sidoarjo ternyata punya banyak hal menarik!"' // Fokus pada informasi/destinasi
+            },
+            {
+                avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026705d',
+                name: 'Rina Sugiarti Erik',
+                origin: 'Wisatawan dari Bandung',
+                quote: '"Saya pakai rencana 3 hari 2 malam ini bareng teman-teman. Itinerary-nya lengkap, hotel yang direkomendasikan nyaman, dan kami berhasil mengunjungi semua spot sejarah dan kuliner. Sangat membantu!"' // Fokus pada itinerary/rekomendasi
+            },
+            {
+                avatar: 'https://i.pravatar.cc/150?u=a042581f4e29026706d',
+                name: 'Siti Pratama Astuti',
+                origin: 'Wisatawan dari Yogyakarta',
+                quote: '"Sebagai solo traveler, saya merasa terbantu oleh panduan rute perjalanannya. Bisa keliling Sidoarjo tanpa pusing mikirin destinasi dan estimasi biaya. Kulinernya juara!"' // Fokus pada panduan/rute
+            }
+        ];
+
+        const packageDetails = {
+            
+            hemat: {
+                name: 'Dolan 1: Jelajah Sejarah & Kuliner Sehari',
+                price: 'Estimasi Rp 100.000*', 
+                image: 'https://www.rumah123.com/seo-cms/assets/Sejarah_Museum_Mpu_Tantular_969da5e615/Sejarah_Museum_Mpu_Tantular_969da5e615.jpg',
+                duration: '1 Hari Penuh (± 8 Jam)',
+                features: [
+                    { text: '4 Destinasi Utama + Kuliner Khas', included: true },
+                    { text: 'Asumsi Perjalanan Mandiri (Kendaraan Pribadi/Online)', included: true },
+                    { text: 'Panduan Waktu Makan Siang Khas Sidoarjo', included: true },
+                    { text: 'Panduan Lokasi Foto Ikonik', included: true },
+                    { text: 'Rencana Perjalanan Tanpa Pemandu', included: false }
+                ],
+                itinerary: [
+                    { time: "09:00 - 11:00", destination: "Candi Pari", description: "Mengagumi arsitektur kuno peninggalan Majapahit di Porong.", price: "Rp. 3.000" },
+                    { time: "11:30 - 12:30", destination: "Makan Siang Lontong Kupang", description: "Menikmati kuliner khas Sidoarjo yang legendaris.", price: "Rp. 15.000"},
+                    { time: "13:30 - 15:30", destination: "Museum Mpu Tantular", description: "Menyelami sejarah dan budaya Jawa Timur.", price: "Rp. 5.000"},
+                    { time: "16:00 - 17:30", destination: "Alun-alun Sidoarjo & Monumen Jayandaru", description: "Bersantai dan berfoto di ikon kota.", price: "Rp. 0 (Parkir Rp 3.000)" }
+                ]
+            },
+            populer: {
+                name: 'Dolan 2: Petualangan Pesisir & Budaya 2D1N',
+                price: 'Estimasi Rp 450.000*',
+                image: 'https://sidita.disbudpar.jatimprov.go.id/storage/foto-dtw/1432b_1670379450.jpg',
+                duration: '2 Hari 1 Malam',
+                features: [
+                    { text: '5 Destinasi Utama (Alam, Budaya, Edukasi)', included: true },
+                    { text: 'Rekomendasi Transportasi Roda Empat', included: true },
+                    { text: 'Rencana Mencakup Penginapan (1 Malam)', included: true },
+                    { text: 'Panduan Sewa Perahu dan Spot Foto Pesisir', included: true },
+                    { text: 'Pemandu Lokal (Opsional)', included: false }
+                ],
+                itinerary: [
+                    { time: "Hari 1 - 09:00", destination: "Lumpur Lapindo (Siring)", description: "Menyaksikan fenomena alam unik." },
+                    { time: "Hari 1 - 12:00", destination: "Makan Siang & Snack", description: "Mencicipi hidangan lokal." },
+                    { time: "Hari 1 - 14:00", destination: "Wisata Bahari Tlocor & Pulau Lusi", description: "Eksplorasi hutan mangrove dan pantai." },
+                    { time: "Hari 1 - 19:00", destination: "Check-in Hotel & Makan Malam", description: "Panduan Hotel & Restoran terdekat." },
+                    { time: "Hari 2 - 09:00", destination: "Kampung Batik Jetis", description: "Workshop membatik dan belanja produk." },
+                    { time: "Hari 2 - 13:00", destination: "Pusat Oleh-oleh Bandeng", description: "Berburu bandeng presto dan petis khas." }
+                ],
+                hotelRecommendations: [
+                    { name: 'Hotel X', priceRange: 'Rp 250.000 - Rp 350.000/malam', detail: 'Hotel Bintang 2 di pusat kota, dekat Alun-alun.' },
+                    { name: 'Hotel Y', priceRange: 'Rp 380.000 - Rp 500.000/malam', detail: 'Hotel bisnis dengan fasilitas modern.' }
+                ]
+            },
+            grup: {
+                name: 'Dolan 3: Eksplorasi Komprehensif 3D2N',
+                price: 'Estimasi Rp 650.000*',
+                image: 'https://bacotsekali.sgp1.digitaloceanspaces.com/cityawesome/uploads/2023/01/image-81.png',
+                duration: '3 Hari 2 Malam',
+                features: [
+                    { text: '7 Destinasi Utama (Sejarah, Alam, Edukasi, Rekreasi)', included: true },
+                    { text: 'Rekomendasi untuk Rombongan (Kendaraan Kapasitas Besar)', included: true },
+                    { text: 'Rencana Mencakup Penginapan (2 Malam)', included: true },
+                    { text: 'Panduan Kuliner Lengkap (Makan Siang & Malam)', included: true },
+                    { text: 'Panduan Kontak Pemandu Lokal (Opsional)', included: true }
+                ],
+                itinerary: [
+                    { time: "Hari 1 - 09:00", destination: "Candi Pari & Candi Sumur", description: "Eksplorasi candi kembar era Majapahit." },
+                    { time: "Hari 1 - 13:00", destination: "Museum Mpu Tantular", description: "Menyelami sejarah Jawa Timur." },
+                    { time: "Hari 1 - 19:00", destination: "Check-in Hotel & Makan Malam", description: "Panduan Hotel & Restoran Keluarga." },
+                    { time: "Hari 2 - 09:00", destination: "Wisata Bahari Tlocor & Pulau Lusi", description: "Eksplorasi mangrove dan pantai." },
+                    { time: "Hari 2 - 14:00", destination: "Delta Fishing / Agrowisata Rekreasi", description: "Aktivitas rekreasi dan memancing." },
+                    { time: "Hari 2 - 18:00", destination: "Makan Malam Seafood", description: "Menyantap hidangan laut segar di tepi pantai." },
+                    { time: "Hari 3 - 09:00", destination: "Kampung Batik Jetis", description: "Workshop dan belanja batik." },
+                    { time: "Hari 3 - 13:00", destination: "Pusat Oleh-oleh (Kerupuk, Bandeng, Petis)", description: "Belanja suvenir khas Sidoarjo." }
+                ],
+                hotelRecommendations: [
+                    { name: 'Hotel Z (Family)', priceRange: 'Rp 400.000 - Rp 600.000/malam', detail: 'Hotel dengan kolam renang, cocok untuk rombongan.' },
+                    { name: 'Guesthouse A', priceRange: 'Rp 550.000 - Rp 750.000/rumah', detail: 'Sewa rumah/villa kecil untuk kenyamanan grup.' }
+                ]
+            },
+            sultan: {
+                name: 'Dolan 4: Tur Kustomisasi Premium 4D3N',
+                price: 'Estimasi Rp 950.000*',
+                image: 'https://optika.id/wp-content/uploads/202301/batik-jetis-ikon-sidoarjo-perlu-perhatian.jpeg',
+                duration: '4 Hari 3 Malam',
+                features: [
+                    { text: '8+ Destinasi Pilihan Fleksibel', included: true },
+                    { text: 'Rekomendasi Mobil Pribadi Eksklusif', included: true },
+                    { text: 'Rencana Mencakup Penginapan (3 Malam)', included: true },
+                    { text: 'Panduan Restoran dan Fasilitas Premium', included: true },
+                    { text: 'Panduan Kontak Fotografer/Pemandu Profesional', included: true }
+                ],
+                itinerary: [
+                    { time: "Hari 1 - 09.00", destination: "Tur Privat Candi & Sejarah", description: "Kunjungan eksklusif ke Candi dan Museum." },
+                    { time: "Hari 2 - 09.00", destination: "Eksplorasi Pesisir Premium", description: "Tur perahu pribadi ke Tlocor dan Pulau Lusi." },
+                    { time: "Hari 3 - 09.00 ", destination: "Workshop Kerajinan Eksklusif", description: "Sesi privat membatik atau kerajinan kulit." },
+                    { time: "Hari 4 - 09.00", destination: "Pusat Oleh-oleh dan Kuliner Malam", description: "Berburu oleh-oleh dan makan malam di restoran terbaik." },
+                    { time: "Hari 4 - 13.00", destination: "Destinasi Bebas (Sesuai Pilihan)", description: "Waktu luang atau kunjungan ke destinasi tambahan." }
+                ],
+                hotelRecommendations: [
+                    { name: 'Hotel Bintang 4/5 (Rekomendasi Terbaik)', priceRange: 'Rp 650.000 - Rp 1.200.000/malam', detail: 'Hotel mewah dengan layanan lengkap dan lokasi strategis.' },
+                    { name: 'Boutique Stay', priceRange: 'Rp 800.000 - Rp 1.500.000/rumah', detail: 'Pilihan akomodasi unik dan eksklusif.' }
+                ]
+            }
+        };
 
             const destinationGrid = document.getElementById('top-destinasi-grid');
             if (destinationGrid) {
