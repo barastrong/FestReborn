@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', () => {
     thumbnailGrid.innerHTML = data.images
         .map((imgSrc, index) => `
             <img src="${imgSrc}" data-index="${index}"
-                 class="thumbnail-item w-full h-24 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-primary transition-all opacity-70 hover:opacity-100"
+                 class="thumbnail-item w-full h-24 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-primary transition-all"
                  alt="Thumbnail ${index + 1}">
         `)
         .join('');

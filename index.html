@@ -10,8 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/responsive.css">
-
+    
     <style type="text/tailwindcss">
         @layer utilities {
             .scrollbar-hide::-webkit-scrollbar {
@@ -54,7 +53,6 @@
                         accent: '#F5AD18',
                     },
                     fontFamily: { sans: ['Poppins', 'sans-serif'] },
-                    animation: { bounce: 'bounce 2s infinite' }
                 }
             }
         }
@@ -62,12 +60,12 @@
 </head>
 <body class="font-sans bg-slate-50">
 
-    <nav class="sticky top-0 z-50 shadow-sm py-3 bg-white shadow-md">
+    <nav class="sticky top-0 z-50 shadow-sm py-2 bg-white/95 backdrop-blur-sm">
         <div class="container mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
-            <a href="index.html" class="transition-transform">
-                <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-14 w-auto">
+            <a href="index.html" class="transition-transform hover:scale-105">
+                <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-12 sm:h-14 w-auto">
             </a>
-            <div class="hidden md:flex items-center gap-1 font-semibold text-[18px] ml-auto">
+            <div class="hidden md:flex items-center gap-1 font-semibold text-lg ml-auto">
                 <a href="index.html" class="text-primary px-5 py-2">Home</a>
                 <a href="destination.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Destinasi</a>
                 <a href="kuliner.html" class="text-slate-600 hover:text-primary px-5 py-2 rounded-md transition-colors">Kuliner</a>
@@ -89,41 +87,41 @@
         </div>
     </nav>
 
-    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-white shadow-xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
-        <div class="p-5  flex items-center justify-between border-b">
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-72 bg-white shadow-xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="p-4 flex items-center justify-between border-b">
             <a href="index.html"><img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-12 w-auto"></a>
             <button id="menu-close-btn" class="text-slate-600 text-2xl"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <nav class="p-5 flex flex-col gap-4 text-lg">
-            <a href="index.html" class="text-primary font-semibold">Home</a>
-            <a href="destination.html" class="text-slate-700 px-5 py-2 rounded-md transition-colors">Destinasi</a>
-            <a href="kuliner.html" class="text-slate-700 px-5 py-2 rounded-md transition-colors">Kuliner</a>
-            <span class="font-semibold text-slate-800 pt-2">Akomodasi</span>
-            <a href="hotel.html" class="text-slate-700 pl-4">- Hotel</a>
-            <a href="transportasi.html" class="text-slate-700 pl-4">- Transportasi</a>
-            <a href="lokasi.html" class="text-slate-700 pt-2 px-5 py-2 rounded-md transition-colors">Lokasi Kamu</a>
+        <nav class="p-4 flex flex-col gap-2 text-base font-medium">
+            <a href="index.html" class="block py-2 px-4 text-primary font-semibold bg-primary/10 rounded-md">Home</a>
+            <a href="destination.html" class="block py-2 px-4 text-slate-700 hover:bg-slate-100 rounded-md transition-colors">Destinasi</a>
+            <a href="kuliner.html" class="block py-2 px-4 text-slate-700 hover:bg-slate-100 rounded-md transition-colors">Kuliner</a>
+            <span class="font-semibold text-slate-800 pt-2 px-4">Akomodasi</span>
+            <a href="hotel.html" class="block py-2 px-8 text-slate-700 hover:bg-slate-100 rounded-md transition-colors">Hotel</a>
+            <a href="transportasi.html" class="block py-2 px-8 text-slate-700 hover:bg-slate-100 rounded-md transition-colors">Transportasi</a>
+            <a href="lokasi.html" class="block py-2 px-4 text-slate-700 hover:bg-slate-100 rounded-md transition-colors mt-2">Lokasi Kamu</a>
         </nav>
     </div>
     <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300"></div>
 
     <main>
-        <section id="hero" class="relative py-16 sm:py-20 lg:py-24 bg-cover bg-center bg-no-repeat" style="background-image: url(https://travelspromo.com/wp-content/uploads/2021/12/Suasana-malam-di-Monumen-Jayandaru.jpg);">
+        <section id="hero" class="relative py-12 sm:py-16 lg:py-20 bg-cover bg-center bg-no-repeat" style="background-image: url(https://travelspromo.com/wp-content/uploads/2021/12/Suasana-malam-di-Monumen-Jayandaru.jpg);">
             <div class="absolute inset-0 bg-black/60"></div>
             <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left fade-in-up">
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:0_2px_4px_rgb(0_0_0/_40%)]">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight [text-shadow:0_2px_4px_rgb(0_0_0/_40%)]">
                             Jelajahi Pesona <span class="text-primary">Tersembunyi</span> Sidoarjo
                         </h1>
-                        <p class="text-lg text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0 [text-shadow:0_1px_2px_rgb(0_0_0/_40%)]">
+                        <p class="text-base sm:text-lg text-slate-200 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0 [text-shadow:0_1px_2px_rgb(0_0_0/_40%)]">
                             Dari warisan budaya yang kaya, kuliner legendaris, hingga keindahan alam yang memukau. Temukan pengalaman tak terlupakan di setiap sudut kota delta.
                         </p>
-                        <a href="#top-destinasi" class="inline-flex items-center bg-primary text-white font-bold px-8 py-4   rounded-full transition-all duration-300 shadow-lg">
+                        <a href="#top-destinasi" class="inline-flex items-center bg-primary text-white font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105 hover:shadow-primary/50">
                             Mulai Petualangan
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 h-5 w-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
                         </a>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 fade-in-up mt-12 lg:mt-0">
+                    <div class="grid grid-cols-2 gap-4 fade-in-up mt-8 lg:mt-0">
                         <div class="space-y-4">
                             <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[3/4]"><img src='./assets/batik-jetis.jpg' alt="Batik Jetis" class="w-full h-full object-cover"/></div>
                             <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-square"><img src="https://asset-3.tstatic.net/jualbeli/img/njajal/2021/12/Mengenal-Produk-Kerajinan-Kulit-Asal-Jawa-Barat-yang-Raih-Omzet-Ratusan-Juta-Rupiah-master-1386674594.jpg" alt="Kerajinan Kulit" class="w-full h-full object-cover"/></div>
@@ -145,10 +143,10 @@
                         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-6">Jelajahi Jantung Kota Delta</h2>
                         <p class="text-slate-600 leading-relaxed mb-4">Sidoarjo, yang dikenal sebagai "Kota Udang dan Bandeng", adalah sebuah kabupaten dinamis yang menjadi penyangga utama Kota Surabaya. Lebih dari sekadar kota industri, Sidoarjo menyimpan pesona wisata yang autentik dan tak terlupakan.</p>
                         <p class="text-slate-600 leading-relaxed mb-8">Dari cita rasa Lontong Kupang yang legendaris hingga kemegahan Candi Pari yang bersejarah, setiap sudut kota ini menawarkan cerita unik. Temukan keramahan warganya, kekayaan budayanya, dan nikmati pengalaman yang hanya bisa Anda temukan di sini.</p>
-                        <a href="destination.html" class="inline-block bg-primary-dark text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform shadow-lg">Lihat Semua Destinasi <i class="fa-solid fa-arrow-right ml-2"></i></a>
+                        <a href="destination.html" class="inline-block bg-primary-dark text-white font-bold px-8 py-3 rounded-lg transition-all duration-300 transform shadow-lg hover:scale-105 hover:shadow-primary-dark/40">Lihat Semua Destinasi <i class="fa-solid fa-arrow-right ml-2"></i></a>
                     </div>
                     <div class="relative fade-in-up">
-                        <img src="./assets/candi-pari.jpg" alt="Candi Pari Sidoarjo" class="rounded-2xl shadow-xl w-full h-auto object-cover aspect-square ring-4 ring-primary/20">
+                        <img src="https://cdn1-production-images-kly.akamaized.net/M1iWcsKhITDrTGF83c0xK3Voq48=/500x281/smart/filters:quality(75):strip_icc()/kly-media-production/medias/2881522/original/015758400_1565767254-800px-Candi_Pari_1.jpg" alt="Candi Pari Sidoarjo" class="rounded-2xl shadow-xl w-full h-auto object-cover aspect-square ring-4 ring-primary/50">
                     </div>
                 </div>
             </section>
@@ -159,9 +157,9 @@
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-slate-800">Top Destinasi</h2>
             </div>
             <div class="relative group">
-                <button id="scroll-left-btn" aria-label="Geser ke kiri" class="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-20 bg-white rounded-full h-12 w-12 flex items-center justify-center shadow-lg transition-all disabled:opacity-0 disabled:cursor-not-allowed"><i class="fa-solid fa-chevron-left text-slate-700"></i></button>
+                <button id="scroll-left-btn" aria-label="Geser ke kiri" class="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 z-20 bg-white rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center shadow-lg transition-all disabled:opacity-0 disabled:cursor-not-allowed hover:bg-slate-100"><i class="fa-solid fa-chevron-left text-slate-700"></i></button>
                 <div id="top-destinasi-grid" class="flex gap-4 md:gap-6 overflow-x-auto pb-6 scrollbar-hide fade-in-up px-4 sm:px-6 lg:px-8 scroll-smooth"></div>
-                <button id="scroll-right-btn" aria-label="Geser ke kanan" class="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-20 bg-white rounded-full h-12 w-12 flex items-center justify-center shadow-lg transition-all disabled:opacity-0 disabled:cursor-not-allowed"><i class="fa-solid fa-chevron-right text-slate-700"></i></button>
+                <button id="scroll-right-btn" aria-label="Geser ke kanan" class="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 z-20 bg-white rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center shadow-lg transition-all disabled:opacity-0 disabled:cursor-not-allowed hover:bg-slate-100"><i class="fa-solid fa-chevron-right text-slate-700"></i></button>
             </div>
         </section>
 
@@ -187,35 +185,35 @@
                     <a href="index.html" class="inline-block bg-white p-2 rounded-lg shadow-md"><img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-16 w-auto"></a>
                     <p class="text-sm leading-relaxed text-slate-300/90">Platform digital Anda untuk menjelajahi pesona tersembunyi Sidoarjo. Temukan pengalaman tak terlupakan bersama kami.</p>
                     <div class="flex items-center gap-3 pt-2">
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 text-white" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 text-white" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 text-white" aria-label="YouTube"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube text-lg"></i></a>
                     </div>
                 </div>
                 <div>
                     <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Jelajahi</h3>
                     <nav class="space-y-3 text-sm flex flex-col">
-                        <a href="destination.html" class="transition-all">Destinasi Populer</a>
-                        <a href="kuliner.html" class="transition-all">Kuliner Khas</a>
-                        <a href="hotel.html" class="transition-all">Hotel & Akomodasi</a>
-                        <a href="event.html" class="transition-all">Event & Festival</a>
+                        <a href="destination.html" class="hover:text-primary transition-colors">Destinasi Populer</a>
+                        <a href="kuliner.html" class="hover:text-primary transition-colors">Kuliner Khas</a>
+                        <a href="hotel.html" class="hover:text-primary transition-colors">Hotel & Akomodasi</a>
+                        <a href="event.html" class="hover:text-primary transition-colors">Event & Festival</a>
                     </nav>
                 </div>
                 <div>
                     <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Bantuan</h3>
                     <nav class="space-y-3 text-sm flex flex-col">
-                        <a href="faq.html" class="transition-all">FAQ</a>
-                        <a href="tentang.html" class="transition-all">Tentang Kami</a>
-                        <a href="kontak.html" class="transition-all">Hubungi Kami</a>
-                        <a href="kebijakan.html" class="transition-all">Kebijakan Privasi</a>
+                        <a href="faq.html" class="hover:text-primary transition-colors">FAQ</a>
+                        <a href="tentang.html" class="hover:text-primary transition-colors">Tentang Kami</a>
+                        <a href="kontak.html" class="hover:text-primary transition-colors">Hubungi Kami</a>
+                        <a href="kebijakan.html" class="hover:text-primary transition-colors">Kebijakan Privasi</a>
                     </nav>
                 </div>
                 <div>
                     <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Kantor Kami</h3>
                     <div class="space-y-4 text-sm">
                         <div class="flex items-start gap-3"><i class="fa-solid fa-map-marker-alt text-primary mt-1 w-4 text-center"></i><span>Jl. Pahlawan No. 1, Sidoarjo, Jawa Timur, 61212</span></div>
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary w-4 text-center"></i><a href="tel:+62311234567" class="transition-colors">(031) 123-4567</a></div>
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-envelope text-primary w-4 text-center"></i><a href="mailto:info@sidodolan.id" class="transition-colors">info@sidodolan.id</a></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary w-4 text-center"></i><a href="tel:+62311234567" class="hover:text-primary transition-colors">(031) 123-4567</a></div>
+                        <div class="flex items-center gap-3"><i class="fa-solid fa-envelope text-primary w-4 text-center"></i><a href="mailto:info@sidodolan.id" class="hover:text-primary transition-colors">info@sidodolan.id</a></div>
                     </div>
                 </div>
             </div>
@@ -228,26 +226,26 @@
     </footer>
 
     <div id="package-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm modal-hidden opacity-0 transition-opacity duration-300">
-        <div id="modal-panel" class="bg-white rounded-2xl w-full max-w-6xl shadow-2xl transition-all duration-300 transform scale-95 opacity-0 flex flex-col max-h-[90vh]">
-            <div class="flex items-center justify-between p-5 border-b border-slate-200 flex-shrink-0">
+        <div id="modal-panel" class="bg-white rounded-2xl w-full max-w-6xl shadow-2xl transition-all duration-300 transform scale-95 opacity-0 flex flex-col max-h-[95vh] sm:max-h-[90vh]">
+            <div class="flex items-center justify-between p-4 sm:p-5 border-b border-slate-200 flex-shrink-0">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-primary-dark/10 text-primary-dark rounded-lg flex items-center justify-center text-xl">
+                    <div class="w-12 h-12 bg-primary-dark/10 text-primary-dark rounded-lg flex items-center justify-center text-xl flex-shrink-0">
                         <i class="fa-solid fa-suitcase-rolling"></i>
                     </div>
                     <div>
-                        <h2 id="modal-title" class="text-2xl font-bold text-slate-800">Detail Paket Wisata</h2>
+                        <h2 id="modal-title" class="text-xl sm:text-2xl font-bold text-slate-800">Detail Paket Wisata</h2>
                         <p id="modal-duration" class="text-sm text-slate-500">Durasi Perjalanan</p>
                     </div>
                 </div>
-                <button id="modal-close-btn" class="text-slate-400 hover:text-slate-600 text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors">
+                <button id="modal-close-btn" class="text-slate-400 hover:text-slate-600 text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-100 transition-colors flex-shrink-0">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             
             <div class="overflow-y-auto">
-                <div class="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                     <div class="lg:col-span-2">
-                        <div class="relative h-80 rounded-xl overflow-hidden mb-8">
+                        <div class="relative h-60 sm:h-80 rounded-xl overflow-hidden mb-8 shadow-lg">
                             <img id="modal-image" src="" alt="" class="w-full h-full object-cover" />
                             <div id="modal-gradient" class="absolute inset-0 bg-gradient-to-t opacity-60 from-black/50 to-transparent"></div>
                         </div>
@@ -258,13 +256,13 @@
                     <div class="lg:col-span-1 lg:sticky lg:top-6">
                         <div class="border border-slate-200 rounded-xl p-6 bg-slate-50/50">
                             <p class="text-sm text-slate-500">Harga mulai dari</p>
-                            <p id="modal-price" class="text-4xl font-extrabold text-primary-dark mb-1"></p>
+                            <p id="modal-price" class="text-3xl sm:text-4xl font-extrabold text-primary-dark mb-1"></p>
                             <p class="text-slate-500 mb-6">/ orang</p>
 
                             <h4 class="font-bold text-slate-800 text-lg mb-3">Fasilitas Termasuk</h4>
                             <ul id="modal-features" class="space-y-3 mb-8"></ul>
                             
-                            <a href="#" class="block w-full text-center py-4 px-6 rounded-lg font-bold text-lg bg-primary text-white transition hover:bg-primary/90 shadow-lg shadow-primary/30">Pesan Sekarang</a>
+                            <a href="#" class="block w-full text-center py-4 px-6 rounded-lg font-bold text-lg bg-primary text-white transition hover:bg-primary/90 shadow-lg shadow-primary/30 hover:scale-105">Pesan Sekarang</a>
                         </div>
                         <div class="mt-6 p-4 bg-blue-50 border-l-4 border-primary-dark rounded-r-lg">
                             <p class="text-sm text-blue-800"><span class="font-semibold">Catatan:</span> Rencana perjalanan bersifat fleksibel dan dapat disesuaikan dengan keinginan Anda.</p>

@@ -828,7 +828,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('main-image');
     const thumbnailGrid = document.getElementById('thumbnail-grid');
     mainImage.src = data.images[0];
-    thumbnailGrid.innerHTML = data.images.map((imgSrc, index) => `<img src="${imgSrc}" data-index="${index}" class="thumbnail-item w-full h-24 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-primary transition-all opacity-70 hover:opacity-100" alt="Thumbnail ${index + 1}">`).join('');
+    thumbnailGrid.innerHTML = data.images.map((imgSrc, index) => `<img src="${imgSrc}" data-index="${index}" class="thumbnail-item w-full h-24 object-cover rounded-md cursor-pointer border-2 border-transparent hover:border-primary transition-all" ${index === 0 ? "thumbnail-active" : ""} alt="Thumbnail ${index + 1}">`).join('');
 
     const thumbnails = document.querySelectorAll('.thumbnail-item');
     function setActiveThumbnail(index) {

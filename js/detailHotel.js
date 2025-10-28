@@ -746,7 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const thumbnailGrid = document.getElementById("thumbnail-grid");
     mainImage.src = hotel.images[0];
     thumbnailGrid.innerHTML = hotel.images.map((imgSrc, index) => `
-        <img src="${imgSrc}" alt="Thumbnail ${index + 1}" class="w-full h-full object-cover rounded-md cursor-pointer border-4 border-transparent opacity-70 hover:opacity-100 transition-all aspect-video ${index === 0 ? "thumbnail-active" : ""}" data-index="${index}">
+        <img src="${imgSrc}" alt="Thumbnail ${index + 1}" class="w-full h-full object-cover rounded-md cursor-pointer border-4 border-transparent transition-all aspect-video ${index === 0 ? "thumbnail-active" : ""}" data-index="${index}">
     `).join("");
 
     thumbnailGrid.addEventListener("click", e => {
