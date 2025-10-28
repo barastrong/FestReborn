@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { day: "Sabtu - Minggu", time: "07:00 - 17:00" }
             ]
         },
-        'pulau-sarinah': {
-            name: "Pulau Sarinah (Pulau Lusi)",
+        'pulau-lusi': {
+            name: "Pulau Lusi",
             category: "Alam",
             phone: "tel:+62318921946",
             images: [

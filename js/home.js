@@ -2,9 +2,9 @@
             const topDestinations = [
                 { name: "Kampung Batik Jetis", image: "https://media.indozone.id/crop/photo/p2/95/2025/04/12/1000259473-634846500.jpg" },
                 { name: "Candi Pari", image: "https://cdn1-production-images-kly.akamaized.net/M1iWcsKhITDrTGF83c0xK3Voq48=/500x281/smart/filters:quality(75):strip_icc()/kly-media-production/medias/2881522/original/015758400_1565767254-800px-Candi_Pari_1.jpg" },
-                { name: "Pulau Sarinah", image: "./assets/pulau-sarinah.jpg" },
+                { name: "Pulau Lusi", image: "https://sidita.disbudpar.jatimprov.go.id/storage/foto-dtw/d3ca2_1670487091.jpg" },
                 { name: "Delta Fishing", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKzQokUGMD6KokbUZ-LcsFqb1R0tC3PKNUtA&s" },
-                { name: "Museum Mpu Tantular", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnnvMHpWEONa7_9fjgIg05yLrBwji_tXqrOQ&s" },
+                { name: "Museum Mpu Tantular", image: "https://awsimages.detik.net.id/community/media/visual/2023/08/25/mpu-tantular-museum_169.jpeg?w=1200" },
                 { name: "Alun-Alun Sidoarjo", image: "https://cdn.antaranews.com/cache/1200x800/2023/09/29/taman-alun.jpg" },
                 { name: "Kebun Cokelat", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgN_BpjYi5bFfahDiZhZtofIqosTB1ljq-Uw&s" },
                 { name: "Wisata Bahari Tlocor", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbKR92TorlzRqHkpvK1haDTo_xWsy-VSbZQw&s" },
@@ -14,6 +14,7 @@
                 {
                     id: 'hemat',
                     name: 'Jelajah Hemat',
+                    image:'./assets/Logo.png',
                     normalPrice: '350.000',
                     price: '250',
                     priceSuffix: '.000',
@@ -163,12 +164,12 @@
                     const id = dest.name.toLowerCase().replace(/\s+/g, '-');
                     return `
                         <a href="detailDestination.html?id=${id}" class="flex-shrink-0 w-60 sm:w-64 md:w-72 group">
-                            <div class="relative rounded-xl overflow-hidden aspect-[3/4] shadow-lg transition-transform duration-300 group-hover:scale-105">
+                            <div class="relative rounded-xl overflow-hidden aspect-[3/4] shadow-lg transition-transform duration-300">
                                 <img src="${dest.image}" alt="${dest.name}" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                                 <div class="absolute bottom-0 left-0 p-4 md:p-5 text-white w-full">
                                     <h3 class="font-bold text-lg mb-1">${dest.name}</h3>
-                                    <p class="text-sm opacity-80 flex items-center gap-2">Kunjungi <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i></p>
+                                    <p class="text-sm opacity-80 flex items-center gap-2">Kunjungi <i class="fa-solid fa-arrow-right text-xs transition-transform duration-300"></i></p>
                                 </div>
                             </div>
                         </a>`;

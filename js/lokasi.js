@@ -27,7 +27,7 @@
             const allData = [
                 { type: 'Destinasi', name: "Kampung Batik Jetis", lokasi: "Jetis, Sidoarjo", image: "https://cdn.ngopibareng.id/uploads/2023/2023-09-03/kampung-batik-jetis-destinasi-umkm-lokal-di-gelaran-porprov--01", rating: 4.6, harga: 5000, description: "Jelajahi pusat kerajinan batik tulis khas Sidoarjo dengan motif yang unik dan penuh warna." },
                 { type: 'Destinasi', name: "Candi Pari", lokasi: "Porong, Sidoarjo", image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=800", rating: 4.7, harga: 10000, description: "Saksikan kemegahan peninggalan arsitektur era Majapahit dengan suasana tenang dan spot foto instagramable." },
-                { type: 'Destinasi', name: "Pulau Sarinah", lokasi: "Tlocor, Sidoarjo", image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800", rating: 4.5, harga: 25000, description: "Nikmati keindahan alam pesisir dengan hutan mangrove yang asri, cocok untuk bersantai dan memancing." },
+                { type: 'Destinasi', name: "Pulau Lusi", lokasi: "Tlocor, Sidoarjo", image: "https://sidita.disbudpar.jatimprov.go.id/storage/foto-dtw/d3ca2_1670487091.jpg", rating: 4.5, harga: 25000, description: "Nikmati keindahan alam pesisir dengan hutan mangrove yang asri, cocok untuk bersantai dan memancing." },
                 { type: 'Destinasi', name: "Delta Fishing", lokasi: "Prasung, Buduran", image: "https://i.ytimg.com/vi/t27QPt90skk/maxresdefault.jpg", rating: 4.4, harga: 30000, description: "Tempat rekreasi keluarga yang menyediakan kolam pemancingan, taman bermain, dan aneka wahana air seru." },
                 { type: 'Destinasi', name: "Museum Mpu Tantular", lokasi: "Buduran, Sidoarjo", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCGn6S1-Lm5uyOc2JP8-phj8Tn0ljv8s3kug&s", rating: 4.6, harga: 4000, description: "Museum negeri yang menyimpan ribuan koleksi benda bersejarah dari berbagai era, dari prasejarah hingga kemerdekaan." },
                 { type: 'Destinasi', name: "Alun-Alun Sidoarjo", lokasi: "Pusat Kota, Sidoarjo", image: "https://cdn.antaranews.com/cache/1200x800/2023/09/29/taman-alun.jpg", rating: 4.5, harga: 0, description: "Jantung kota Sidoarjo yang ramai, tempat berkumpul warga untuk bersantai, berolahraga, dan menikmati jajanan." },
@@ -223,17 +223,13 @@
             function createCard(item) {
                 let priceText = item.harga > 0 ? formatPrice(item.harga) : 'Gratis';
                 if (item.type === 'Hotel') priceText += ' / malam';
-                
-                let iconClass = 'fa-map-location-dot';
-                if(item.type === 'Hotel') iconClass = 'fa-bed';
-                if(item.type === 'Kuliner') iconClass = 'fa-utensils';
 
                 return `
                 <div class="bg-white rounded-2xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col animate-fade-in">
                     <div class="relative h-56 overflow-hidden">
                         <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <span class="absolute top-3 right-3 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                            <i class="fa-solid ${iconClass} mr-1.5"></i>${item.type}
+                        <span class="absolute top-3 right-3 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">
+                            ${item.type}
                         </span>
                     </div>
                     <div class="p-5 flex flex-col justify-between flex-grow">

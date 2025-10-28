@@ -119,10 +119,10 @@
 
     <div id="menu-overlay" class="fixed inset-0 bg-black/60 z-40 hidden opacity-0 transition-opacity duration-300"></div>
     
-    <header class="py-16 md:py-24 relative" style="background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200'); background-size: cover; background-position: center;">
+    <header class="pt-16 md:pt-24 pb-20 md:pb-28 relative" style="background-image: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <div class="max-w-4xl mx-auto animate-fade-in">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center mb-12 animate-fade-in">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
                     Temukan <span class="text-primary">Lokasimu</span>
                 </h1>
@@ -130,110 +130,110 @@
                     Cari destinasi, hotel, atau kuliner favoritmu di satu tempat.
                 </p>
             </div>
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-xl animate-fade-in border">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                <i class="fa-solid fa-magnifying-glass mr-2 text-primary"></i>Cari Tempat atau Lokasi
+                            </label>
+                            <input id="search-input" type="text" placeholder="Contoh: Candi Pari, Surabaya..." class="w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-primary transition focus:outline-none font-medium">
+                        </div>
+                        <div class="relative" id="category-dropdown-container">
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">
+                                <i class="fa-solid fa-filter mr-2 text-primary"></i>Kategori
+                            </label>
+                            <button id="category-dropdown-button" class="w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:ring-primary focus:border-primary transition appearance-none focus:outline-none font-medium flex justify-between items-center text-left">
+                                <span id="selected-category-text" class="text-slate-800 truncate">Semua</span>
+                                <i id="category-chevron" class="fa-solid fa-chevron-down text-slate-500 transition-transform ml-2"></i>
+                            </button>
+                            <div id="category-dropdown-menu" class="absolute top-full mt-2 w-full bg-white rounded-xl shadow-lg p-2 z-20 border border-slate-200 hidden transform opacity-0 -translate-y-2 transition-all duration-200">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-6 border-t border-slate-200">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                            <div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
+                                     <label class="text-sm font-semibold text-slate-700 mb-2 sm:mb-0"><i class="fa-solid fa-money-bill-wave mr-2 text-primary"></i>Rentang Harga</label>
+                                     <div class="flex items-center gap-2 text-xs font-bold text-slate-600">
+                                         <span id="min-price-display" class="bg-slate-100 px-2 py-1 rounded-md">Rp 0</span>
+                                         <span>-</span>
+                                         <span id="max-price-display" class="bg-slate-100 px-2 py-1 rounded-md">Rp 2.5jt</span>
+                                     </div>
+                                </div>
+                                <div class="price-slider-container">
+                                    <div class="slider-track"></div>
+                                    <div id="price-slider-range" class="slider-range"></div>
+                                    <input type="range" id="min-price-slider" class="slider-input">
+                                    <input type="range" id="max-price-slider" class="slider-input">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
+                                     <label class="text-sm font-semibold text-slate-700 mb-2 sm:mb-0"><i class="fa-solid fa-star mr-2 text-primary"></i>Rentang Rating</label>
+                                     <div class="flex items-center gap-2 text-xs font-bold text-slate-600">
+                                         <span id="min-rating-display" class="bg-slate-100 px-2 py-1 rounded-md">0.0</span>
+                                         <span>-</span>
+                                         <span id="max-rating-display" class="bg-slate-100 px-2 py-1 rounded-md">5.0</span>
+                                     </div>
+                                </div>
+                                <div class="rating-slider-container">
+                                    <div class="slider-track"></div>
+                                    <div id="rating-slider-range" class="slider-range"></div>
+                                    <input type="range" id="min-rating-slider" class="slider-input">
+                                    <input type="range" id="max-rating-slider" class="slider-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
-
-    <div class="container mx-auto px-4 -mt-20 sm:-mt-24 relative z-20">
-        <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-xl animate-fade-in border">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
-                <div class="md:col-span-2">
-                    <label class="block text-sm font-semibold text-slate-700 mb-2">
-                        <i class="fa-solid fa-magnifying-glass mr-2 text-primary"></i>Cari Tempat atau Lokasi
-                    </label>
-                    <input id="search-input" type="text" placeholder="Contoh: Candi Pari, Surabaya..." class="w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:border-primary transition focus:outline-none font-medium">
-                </div>
-                <div class="relative" id="category-dropdown-container">
-                    <label class="block text-sm font-semibold text-slate-700 mb-2">
-                        <i class="fa-solid fa-filter mr-2 text-primary"></i>Kategori
-                    </label>
-                    <button id="category-dropdown-button" class="w-full p-3 bg-slate-50 border-2 border-slate-200 rounded-xl focus:ring-primary focus:border-primary transition appearance-none focus:outline-none font-medium flex justify-between items-center text-left">
-                        <span id="selected-category-text" class="text-slate-800 truncate">Semua</span>
-                        <i id="category-chevron" class="fa-solid fa-chevron-down text-slate-500 transition-transform ml-2"></i>
-                    </button>
-                    <div id="category-dropdown-menu" class="absolute top-full mt-2 w-full bg-white rounded-xl shadow-lg p-2 z-20 border border-slate-200 hidden transform opacity-0 -translate-y-2 transition-all duration-200">
-                    </div>
-                </div>
-            </div>
-            <div class="mt-6 pt-6 border-t border-slate-200">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-                    <div>
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                             <label class="text-sm font-semibold text-slate-700 mb-2 sm:mb-0"><i class="fa-solid fa-money-bill-wave mr-2 text-primary"></i>Rentang Harga</label>
-                             <div class="flex items-center gap-2 text-xs font-bold text-slate-600">
-                                 <span id="min-price-display" class="bg-slate-100 px-2 py-1 rounded-md">Rp 0</span>
-                                 <span>-</span>
-                                 <span id="max-price-display" class="bg-slate-100 px-2 py-1 rounded-md">Rp 2.5jt</span>
-                             </div>
-                        </div>
-                        <div class="price-slider-container">
-                            <div class="slider-track"></div>
-                            <div id="price-slider-range" class="slider-range"></div>
-                            <input type="range" id="min-price-slider" class="slider-input">
-                            <input type="range" id="max-price-slider" class="slider-input">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                             <label class="text-sm font-semibold text-slate-700 mb-2 sm:mb-0"><i class="fa-solid fa-star mr-2 text-primary"></i>Rentang Rating</label>
-                             <div class="flex items-center gap-2 text-xs font-bold text-slate-600">
-                                 <span id="min-rating-display" class="bg-slate-100 px-2 py-1 rounded-md">0.0</span>
-                                 <span>-</span>
-                                 <span id="max-rating-display" class="bg-slate-100 px-2 py-1 rounded-md">5.0</span>
-                             </div>
-                        </div>
-                        <div class="rating-slider-container">
-                            <div class="slider-track"></div>
-                            <div id="rating-slider-range" class="slider-range"></div>
-                            <input type="range" id="min-rating-slider" class="slider-input">
-                            <input type="range" id="max-rating-slider" class="slider-input">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     
-    <div class="container mx-auto px-4 pb-16 pt-12">
+    <div class="container mx-auto px-4 pb-16 mt-16">
         <main id="grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 min-h-[300px]"></main>
         <footer id="pagination" class="flex justify-center items-center gap-2 sm:gap-3"></footer>
     </div>
 
     <footer class="bg-primary-dark text-slate-300">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="space-y-4">
-                    <a href="index.html" class="inline-block bg-white p-2 rounded-lg shadow-md"><img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-16 w-auto"></a>
-                    <p class="text-sm leading-relaxed text-slate-300/90">Platform digital Anda untuk menjelajahi pesona tersembunyi Sidoarjo. Temukan pengalaman tak terlupakan bersama kami.</p>
-                    <div class="flex items-center gap-3 pt-2">
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-lg"></i></a>
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube text-lg"></i></a>
-                    </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-12 pb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                <div class="lg:col-span-5 space-y-4">
+                    <a href="index.html" class="inline-block bg-white p-2 rounded-lg shadow-md">
+                        <img src="./assets/Logo.png" alt="SidoDolan Logo" class="h-16 w-auto">
+                    </a>
+                    <p class="text-sm leading-relaxed text-slate-300/90">
+                        Platform digital Anda untuk menjelajahi pesona tersembunyi Sidoarjo. Temukan pengalaman tak terlupakan bersama kami.
+                    </p>
                 </div>
-                <div>
-                    <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Jelajahi</h3>
+
+                <div class="lg:col-span-3">
+                    <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Media Sosial</h3>
                     <nav class="space-y-3 text-sm flex flex-col">
-                        <a href="destination.html" class="hover:text-primary transition-colors">Destinasi Populer</a>
-                        <a href="kuliner.html" class="hover:text-primary transition-colors">Kuliner Khas</a>
-                        <a href="hotel.html" class="hover:text-primary transition-colors">Hotel & Akomodasi</a>
-                        <a href="event.html" class="hover:text-primary transition-colors">Event & Festival</a>
+                        <a href="#" class="hover:text-primary transition-colors w-fit">Facebook</a>
+                        <a href="#" class="hover:text-primary transition-colors w-fit">Instagram</a>
+                        <a href="#" class="hover:text-primary transition-colors w-fit">YouTube</a>
+                        <a href="#" class="hover:text-primary transition-colors w-fit">WhatsApp</a>
                     </nav>
                 </div>
-                <div>
-                    <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Bantuan</h3>
-                    <nav class="space-y-3 text-sm flex flex-col">
-                        <a href="faq.html" class="hover:text-primary transition-colors">FAQ</a>
-                        <a href="tentang.html" class="hover:text-primary transition-colors">Tentang Kami</a>
-                        <a href="kontak.html" class="hover:text-primary transition-colors">Hubungi Kami</a>
-                        <a href="kebijakan.html" class="hover:text-primary transition-colors">Kebijakan Privasi</a>
-                    </nav>
-                </div>
-                <div>
+
+                <div class="lg:col-span-4">
                     <h3 class="text-base font-bold text-white mb-6 tracking-wider uppercase">Kantor Kami</h3>
                     <div class="space-y-4 text-sm">
-                        <div class="flex items-start gap-3"><i class="fa-solid fa-map-marker-alt text-primary mt-1 w-4 text-center"></i><span>Jl. Pahlawan No. 1, Sidoarjo, Jawa Timur, 61212</span></div>
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-phone text-primary w-4 text-center"></i><a href="tel:+62311234567" class="hover:text-primary transition-colors">(031) 123-4567</a></div>
-                        <div class="flex items-center gap-3"><i class="fa-solid fa-envelope text-primary w-4 text-center"></i><a href="mailto:info@sidodolan.id" class="hover:text-primary transition-colors">info@sidodolan.id</a></div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-map-marker-alt text-primary mt-1 w-4 text-center"></i>
+                            <span>Jl. Pahlawan No. 1, Sidoarjo, Jawa Timur, 61212</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-primary w-4 text-center"></i>
+                            <a href="tel:+62311234567" class="hover:text-primary transition-colors">(031) 123-4567</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-primary w-4 text-center"></i>
+                            <a href="mailto:info@sidodolan.id" class="hover:text-primary transition-colors">info@sidodolan.id</a>
+                        </div>
                     </div>
                 </div>
             </div>
