@@ -102,7 +102,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const listContainer = document.getElementById('transportation-list');
     const filterButtons = document.querySelectorAll('.filter-btn');
-
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+                        const fadeUpElements = document.querySelectorAll('.fade-in-up');
+            fadeUpElements.forEach(el => observer.observe(el));
     const renderTransportations = (filter = 'all') => {
         if (!listContainer) return;
 
