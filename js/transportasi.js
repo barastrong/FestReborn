@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Bagian menu mobile (tidak ada perubahan)
     const menuToggleBtn = document.getElementById('menu-toggle-btn');
     const menuCloseBtn = document.getElementById('menu-close-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -24,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         menuOverlay.addEventListener('click', closeMenu);
     }
     
-   const transportationData = [
+    // Data transportasi (lengkap)
+    const transportationData = [
         {
             id: 'trans-jatim',
             name: 'Trans Jatim (Bus)',
@@ -37,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             app: {
                 name: 'TransJatim',
-                logo: 'https://placehold.co/100x100/eeeeee/333333/png?text=App',
-                appStoreUrl: '#',
-                googlePlayUrl: '#',
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIy3V8zmhfh0KBo-LlOZg7yXkczqNmZFf5pg&s',
+                appStoreUrl: 'https://apps.apple.com/id/app/transjatim-ajaib/id1636460400',
+                googlePlayUrl: 'https://play.google.com/store/apps/details?id=ngi.muchi.jatimajaib&pcampaignid=web_share',
             },
             social: {
-                instagramUrl: '#',
+                instagramUrl: 'https://www.instagram.com/officialtransjatim?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
             }
         },
         {
@@ -70,12 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             app: {
                 name: 'DAMRI Apps',
-                logo: 'https://placehold.co/100x100/eeeeee/333333/png?text=App',
-                appStoreUrl: '#',
-                googlePlayUrl: '#',
+                logo: 'https://www.mceasy.com/wp-content/uploads/2024/06/logo-damri.webp',
+                appStoreUrl: 'https://apps.apple.com/id/app/damri-apps/id6443452294?l=id',
+                googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.simadamri.damriapps&pcampaignid=web_share',
             },
             social: {
-                instagramUrl: '#',
+                instagramUrl: 'https://www.instagram.com/damriindonesia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
             }
         },
         {
@@ -90,28 +92,32 @@ document.addEventListener('DOMContentLoaded', () => {
             ],
             app: {
                 name: 'KAI Access',
-                logo: 'https://placehold.co/100x100/eeeeee/333333/png?text=App',
+                logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlEeFqJgmFPTgyor3VNo6bqYBwHD1gBGhzJw&s',
                 appStoreUrl: '#',
                 googlePlayUrl: '#',
             },
             social: {
-                instagramUrl: '#',
+                instagramUrl: 'https://www.instagram.com/commuterline?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
             }
         },
     ]; 
 
     const listContainer = document.getElementById('transportation-list');
     const filterButtons = document.querySelectorAll('.filter-btn');
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-                        const fadeUpElements = document.querySelectorAll('.fade-in-up');
-            fadeUpElements.forEach(el => observer.observe(el));
+    
+    // Intersection Observer untuk animasi
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    const fadeUpElements = document.querySelectorAll('.fade-in-up');
+    fadeUpElements.forEach(el => observer.observe(el));
+    
+    // Fungsi render
     const renderTransportations = (filter = 'all') => {
         if (!listContainer) return;
 
@@ -137,15 +143,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 </li>
             `).join('');
 
+            // --- PERBAIKAN FINAL DI SINI ---
             const appHtml = transport.app ? `
                 <div class="mt-6 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center gap-4">
                     <img src="${transport.app.logo}" alt="${transport.app.name} Logo" class="h-16 w-16 rounded-lg bg-slate-200">
                     <div class="text-center sm:text-left">
                         <p class="font-bold text-slate-800">Cek Jadwal di Aplikasi ${transport.app.name}</p>
                         <div class="flex items-center justify-center sm:justify-start gap-3 mt-2">
-                            <a href="${transport.app.appStoreUrl}" class="text-slate-500 hover:text-primary transition"><i class="fa-brands fa-apple mr-1"></i> App Store</a>
-                            <span class="text-slate-300">|</span>
-                            <a href="${transport.app.googlePlayUrl}" class="text-slate-500 hover:text-primary transition"><i class="fa-brands fa-google-play mr-1"></i> Google Play</a>
+                            <a href="${transport.app.appStoreUrl}" target="_blank" rel="noopener noreferrer" class="inline-block h-11">
+                                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="h-full w-auto">
+                            </a>
+                            <a href="${transport.app.googlePlayUrl}" target="_blank" rel="noopener noreferrer" class="inline-block h-16">
+                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="h-full w-auto">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -178,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     };
 
+    // Event listener untuk filter
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             filterButtons.forEach(btn => btn.classList.remove('active'));
@@ -188,5 +199,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Render awal
     renderTransportations('all');
 });

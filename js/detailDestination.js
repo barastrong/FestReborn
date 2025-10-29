@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             phone: 'tel:+6281330073826',
             images: [
                 "https://media.indozone.id/crop/photo/p2/95/2025/04/12/1000259473-634846500.jpg",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4rhI19twy2vM4RZhK7j3cuEV3y1oYnHUjKg&s",
+                "https://rynari.wordpress.com/wp-content/uploads/2016/05/labirin-bisnis-kampoeng-batik-jetis.jpg",
                 "https://cdn.ngopibareng.id/uploads/2023/2023-09-03/kampung-batik-jetis-destinasi-umkm-lokal-di-gelaran-porprov--01",
             ],
             contentBlocks: [

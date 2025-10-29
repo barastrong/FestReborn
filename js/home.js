@@ -217,7 +217,7 @@
                             <p class="text-4xl md:text-5xl font-bold text-slate-900 my-4">Rp ${pkg.price}<span class="text-2xl md:text-3xl font-semibold">${pkg.priceSuffix}</span></p>
                             <p class="text-slate-500 font-medium mb-8">/orang</p>
                             <ul class="space-y-4 text-left text-slate-600 flex-grow">${features}</ul>
-                            <button data-package-id="${pkg.id}" class="w-full text-center mt-10 py-3 px-6 rounded-lg font-semibold border-2 border-primary-dark text-primary-dark transition-all duration-300 hover:bg-primary-dark hover:text-white">Pilih Paket Ini</button>
+                            <button data-package-id="${pkg.id}" class="w-full text-center mt-10 py-3 px-6 rounded-lg font-semibold border-2 border-primary-dark text-primary-dark transition-all duration-300 hover:bg-primary-dark hover:text-white">Lihat Rincian</button>
                         </div>`;
                 }).join('');
             }
