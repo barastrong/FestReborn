@@ -213,8 +213,7 @@
                     return `
                         <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 border-t-4 border-primary-dark h-full flex flex-col fade-in-up transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                             <h3 class="text-2xl font-bold text-slate-800 mb-2">${pkg.name}</h3>
-                            <p class="text-slate-400 text-sm line-through">Harga Normal Rp ${pkg.normalPrice}</p>
-                            <p class="text-4xl md:text-5xl font-bold text-slate-900 my-4">Rp ${pkg.price}<span class="text-2xl md:text-3xl font-semibold">${pkg.priceSuffix}</span></p>
+                            <p class="text-4xl md:text-5xl font-bold text-slate-900 my-2">Rp ${pkg.price}<span class="text-2xl md:text-3xl font-semibold">${pkg.priceSuffix}</span></p>
                             <p class="text-slate-500 font-medium mb-8">/orang</p>
                             <ul class="space-y-4 text-left text-slate-600 flex-grow">${features}</ul>
                             <button data-package-id="${pkg.id}" class="w-full text-center mt-10 py-3 px-6 rounded-lg font-semibold border-2 border-primary-dark text-primary-dark transition-all duration-300 hover:bg-primary-dark hover:text-white">Lihat Rincian</button>
